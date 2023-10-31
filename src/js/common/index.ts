@@ -1,9 +1,9 @@
-import test from './components/test'
+import menuToggler from './components/test'
 
 document.addEventListener(
   'DOMContentLoaded',
   () => {
-    test()
+    menuToggler()
   },
   false
 )

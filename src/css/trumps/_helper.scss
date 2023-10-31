@@ -1,4 +1,5 @@
 @use 'settings/color' as color;
+@use 'tools/media-queries' as mq;
 
 .white {
   color: color.$white;
@@ -26,4 +27,38 @@
 
 .overflow {
   overflow: hidden;
+}
+
+.sp {
+  display: none;
+  @include mq.sp {
+    display: block;
+  }
+}
+
+.sp-flex {
+  display: none;
+  @include mq.sp {
+    display: flex;
+  }
+}
+
+.pc {
+  display: block;
+  @include mq.sp {
+    display: none;
+  }
+}
+
+.pc-flex {
+  display: flex;
+  @include mq.sp {
+    display: none;
+  }
+}
+
+.cover {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
 }
