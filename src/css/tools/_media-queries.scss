@@ -24,6 +24,12 @@
   }
 }
 
+@mixin mx1024 {
+  @media screen and (max-width: 1024px) {
+    @content;
+  }
+}
+
 @mixin mx980 {
   @media screen and (max-width: 980px) {
     @content;
