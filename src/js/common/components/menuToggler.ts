@@ -7,7 +7,7 @@ const menuToggler = () => {
   const anchors = document.querySelectorAll('.header__nav-item');
   const windowWidth = window.innerWidth;
 
-  if (windowWidth < 767 && toggler && nav && anchors) {
+  if (windowWidth < 1025 && toggler && nav && anchors) {
 
     toggler?.addEventListener('click', () => {
       toggler?.classList.toggle('active');
