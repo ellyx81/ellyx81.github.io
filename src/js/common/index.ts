@@ -1,4 +1,4 @@
-import menuToggler from './components/test'
+import menuToggler from './components/menuToggler'
 
 document.addEventListener(
   'DOMContentLoaded',
