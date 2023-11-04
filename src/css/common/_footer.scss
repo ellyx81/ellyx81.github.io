@@ -5,8 +5,6 @@
 
 .footer {
   $p: &;
-
-  margin: 1000px auto 0 !important;
   @include mixin.max-width;
 
   &__contents {
@@ -16,8 +14,13 @@
     border-top: 1px solid color.$gray-5e5;
     display: flex;
     @include mq.mx1024 {
-      font-size: 15px;
       padding: 40px 0;
+    }
+    @include mq.tablet {
+      font-size: 15px;
+    }
+    @include mq.sp {
+      flex-direction: column-reverse;
     }
   }
 
@@ -25,12 +28,16 @@
     width: 60%;
     display: flex;
     flex-direction: column;
+    @include mq.sp {
+      margin-top: 50px;
+      width: 100%;
+    }
   }
 
   &__logo {
     height: 75px;
-    @include mq.mx1024 {
-      height: 35px;
+    @include mq.tablet {
+      height: 55px;
     }
 
     img {
@@ -42,17 +49,37 @@
     font-weight: fw.$medium;
     opacity: 0.5;
     margin-top: 40px;
+    @include mq.tablet {
+      margin-top: 30px;
+    }
+    @include mq.sp {
+      font-size: 16px;
+    }
   }
 
   &__copyright {
     font-size: 1.6rem;
     opacity: 0.4;
     margin-top: 93px;
+    @include mq.mx1024 {
+      font-size: 13px;
+    }
+    @include mq.tablet {
+      margin-top: 60px;
+    }
+    @include mq.sp {
+      margin-top: 50px;
+    }
   }
 
   &__link-container {
     width: 40%;
     display: flex;
+    @include mq.sp {
+      width: 100%;
+      flex-direction: column;
+      gap: 30px;
+    }
   }
 
   &__link-column {
@@ -67,6 +94,10 @@
       opacity: 0.4;
       margin-bottom: 16px;
       transition: 0.3s;
+      @include mq.tablet {
+        font-size: 13px;
+        margin-bottom: 12px;
+      }
 
       &:hover {
         opacity: 1;
@@ -77,5 +108,8 @@
   &__link-title {
     font-weight: fw.$bold;
     margin-bottom: 35px;
+    @include mq.tablet {
+      margin-bottom: 25px;
+    }
   }
 }
