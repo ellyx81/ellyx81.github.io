@@ -3,8 +3,8 @@
  */
 const menuToggler = () => {
   const toggler = document.querySelector('.js-toggler');
-  const nav = document.querySelector('.js-nav-contents');
-  const anchors = document.querySelectorAll('.header__nav-item');
+  const nav = document.querySelector('.js-nav');
+  const anchors = document.querySelectorAll('.header__anchor');
   const windowWidth = window.innerWidth;
 
   if (windowWidth < 1025 && toggler && nav && anchors) {

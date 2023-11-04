@@ -3,17 +3,17 @@ header.header
     a.header__logo(href="#") 
       img.pc-only(src="img/logo.svg", alt="</g> Giselle Santos")
       img.tablet(src="img/logo-2.svg", alt="</g>")
-    .header__toggler.tablet.js-toggler
-      span
-    .header__switch-wrapper.tablet
-      a.header__icon(href="")
-    .header__wrapper.js-nav-contents
-      .header__nav
-        a.header__nav-item(href="#about") About Me 
-        a.header__nav-item(href="#works") Works 
-        a.header__nav-item(href="#contact") Contact
-      .header__socials-wrapper
+    nav.header__nav.js-nav
+      .header__anchor-list
+        a.header__anchor(href="#about") About Me 
+        a.header__anchor(href="#works") Works 
+        a.header__anchor(href="#contact") Contact
+      .header__socials
         a.header__icon(href="https://www.linkedin.com/in/giselle-santos-0017a7298/" target="_blank")
         a.header__icon(href="https://github.com/ellyx81" target="_blank")
-      .header__switch-wrapper.pc
+      .header__switch.pc
         a.header__icon(href="")
+    .header__toggler.tablet.js-toggler
+      span
+    .header__switch.tablet
+      a.header__icon(href="")
