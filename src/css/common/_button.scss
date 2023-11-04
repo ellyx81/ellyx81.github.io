@@ -3,8 +3,8 @@
 @use 'tools/media-queries' as mq;
 
 .button {
-  height: 70px;
-  padding: 20px 100px;
+  height: 64px;
+  padding: 20px 80px;
   border-radius: 50px;
   width: fit-content;
   display: flex;
@@ -17,7 +17,7 @@
     padding: 10px 50px;
   }
 
-  &--icon-right {
+  &--icon-left {
     flex-direction: row-reverse;
   }
 
@@ -37,15 +37,15 @@
   }
 
   span {
-    font: 2.5rem ff.$krona;
+    font: 2rem ff.$krona;
     @include mq.mx1024 {
       font-size: 1.8rem;
     }
   }
 
   img {
-    width: 24px;
-    height: 24px;
+    width: 20px;
+    height: 20px;
     object-fit: contain;
     @include mq.mx1024 {
       width: 18px;

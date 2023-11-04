@@ -1,0 +1,18 @@
+@use 'tools/mixin' as mixin;
+@use 'tools/media-queries' as mq;
+@use 'tools/function' as func;
+
+.section {
+  font-size: 1.6rem;
+  line-height: func.getem(16, 25);
+  padding: 150px 0;
+  @include mq.mx1024 {
+    font-size: 1.3rem;
+    height: auto;
+    padding: 75px 0;
+  }
+
+  &__content {
+    @include mixin.max-width;
+  }
+}
