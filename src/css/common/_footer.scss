@@ -1,0 +1,81 @@
+@use 'settings/color' as color;
+@use 'settings/font-weight' as fw;
+@use 'tools/mixin' as mixin;
+@use 'tools/media-queries' as mq;
+
+.footer {
+  $p: &;
+
+  margin: 1000px auto 0 !important;
+  @include mixin.max-width;
+
+  &__contents {
+    font-size: 2rem;
+    width: 100%;
+    padding: 80px 0;
+    border-top: 1px solid color.$gray-5e5;
+    display: flex;
+    @include mq.mx1024 {
+      font-size: 15px;
+      padding: 40px 0;
+    }
+  }
+
+  &__wrapper {
+    width: 60%;
+    display: flex;
+    flex-direction: column;
+  }
+
+  &__logo {
+    height: 75px;
+    @include mq.mx1024 {
+      height: 35px;
+    }
+
+    img {
+      height: 100%;
+    }
+  }
+
+  &__text {
+    font-weight: fw.$medium;
+    opacity: 0.5;
+    margin-top: 40px;
+  }
+
+  &__copyright {
+    font-size: 1.6rem;
+    opacity: 0.4;
+    margin-top: 93px;
+  }
+
+  &__link-container {
+    width: 40%;
+    display: flex;
+  }
+
+  &__link-column {
+    flex: 1;
+
+    & * {
+      display: block;
+    }
+
+    & a {
+      font-size: 1.6rem;
+      opacity: 0.4;
+      margin-bottom: 16px;
+      transition: 0.3s;
+
+      &:hover {
+        opacity: 1;
+      }
+    }
+  }
+
+  &__link-title {
+    font-weight: fw.$bold;
+    margin-bottom: 35px;
+  }
+}
