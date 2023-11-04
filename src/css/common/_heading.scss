@@ -1,0 +1,17 @@
+@use 'settings/color' as color;
+@use 'settings/font-family' as ff;
+@use 'tools/media-queries' as mq;
+
+.heading {
+  font: 9.6rem ff.$krona;
+  @include mq.mx1024 {
+    font-size: 6rem;
+  }
+
+  &--fs64 {
+    font-size: 6.4rem;
+    @include mq.mx1024 {
+      font-size: 4rem;
+    }
+  }
+}

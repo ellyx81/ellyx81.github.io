@@ -1,0 +1,55 @@
+@use 'settings/color' as color;
+@use 'settings/font-family' as ff;
+@use 'tools/media-queries' as mq;
+
+.button {
+  height: 70px;
+  padding: 20px 100px;
+  border-radius: 50px;
+  width: fit-content;
+  display: flex;
+  align-items: center;
+  gap: 20px;
+  background: linear-gradient(color.$orange-fb8, color.$pink-ac4);
+  transition: 0.5s;
+  @include mq.mx1024 {
+    height: 50px;
+    padding: 10px 50px;
+  }
+
+  &--icon-right {
+    flex-direction: row-reverse;
+  }
+
+  &:hover {
+    box-shadow: 0 7px 15px 0 rgb(172, 64, 71, 0.7);
+
+    & span,
+    & img {
+      opacity: 1;
+      transition: 0.5s ease-out;
+    }
+  }
+
+  & span,
+  & img {
+    opacity: 0.7;
+  }
+
+  span {
+    font: 2.5rem ff.$krona;
+    @include mq.mx1024 {
+      font-size: 1.8rem;
+    }
+  }
+
+  img {
+    width: 24px;
+    height: 24px;
+    object-fit: contain;
+    @include mq.mx1024 {
+      width: 18px;
+      height: 18px;
+    }
+  }
+}
