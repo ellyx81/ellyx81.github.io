@@ -5,11 +5,11 @@
   justify-content: $justify;
 }
 
-@mixin max-width($max-width: 1200px) {
+@mixin max-width($max-width: 1024px) {
   max-width: $max-width;
   margin: 0 auto;
   box-sizing: border-box;
-  @media screen and (max-width: 1280px) {
+  @media screen and (max-width: 1084px) {
     max-width: 100%;
     padding: 0 3%;
   }

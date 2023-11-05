@@ -3,13 +3,13 @@
 @use 'tools/media-queries' as mq;
 
 .button {
-  height: 64px;
-  padding: 20px 80px;
+  height: 60px;
+  padding: 16px 64px;
   border-radius: 50px;
   width: fit-content;
   display: flex;
   align-items: center;
-  gap: 20px;
+  gap: 18px;
   background: linear-gradient(color.$orange-fb8, color.$pink-ac4);
   transition: 0.5s;
   @include mq.mx1024 {
@@ -37,19 +37,12 @@
   }
 
   span {
-    font: 2rem ff.$krona;
-    @include mq.mx1024 {
-      font-size: 1.8rem;
-    }
+    font: 1.8rem ff.$krona;
   }
 
   img {
-    width: 20px;
-    height: 20px;
+    width: 18px;
+    height: 18px;
     object-fit: contain;
-    @include mq.mx1024 {
-      width: 18px;
-      height: 18px;
-    }
   }
 }

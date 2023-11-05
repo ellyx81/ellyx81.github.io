@@ -3,13 +3,13 @@
 @use 'tools/media-queries' as mq;
 
 .heading {
-  font: 8rem ff.$krona;
+  font: 7rem ff.$krona;
   @include mq.mx1024 {
     font-size: 6rem;
   }
 
-  &--fs56 {
-    font-size: 5.6rem;
+  &--fs48 {
+    font-size: 4.8rem;
     @include mq.mx1024 {
       font-size: 4rem;
     }
