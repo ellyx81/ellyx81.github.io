@@ -5,17 +5,17 @@
 
 .footer {
   $p: &;
+  padding: 50px 0;
   border-top: 1px solid color.$gray-5e5;
-  @include mixin.max-width;
+  @include mq.mx1024 {
+    padding: 40px 0;
+  }
 
   &__contents {
     font-size: 2rem;
     width: 100%;
-    padding: 50px 0;
     display: flex;
-    @include mq.mx1024 {
-      padding: 40px 0;
-    }
+    @include mixin.max-width;
     @include mq.tablet {
       font-size: 15px;
     }

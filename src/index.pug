@@ -1,4 +1,5 @@
 extends includes/layout.pug
+include includes/mixins.pug
 block content
   main.main
     section.section.banner
@@ -10,7 +11,7 @@ block content
           a.button.button--icon-left(href="")
             span Download my CV
             img(src="img/icons/download.svg", alt="")
-        .banner__image-wrapper
-          +picture("banner__image", "/banner/banner", "png", "a picture of Giselle Santos").contain
+        .banner__image-wrapper.pc
+          +picture("banner__image", "/banner/banner", "png", "Giselle Santos picture").contain
 block script
   script(src="js/top/index.ts")
