@@ -1,3 +1,5 @@
+@use 'settings/color' as color;
+
 @mixin center($direction: column, $align: center, $justify: center) {
   display: flex;
   flex-direction: $direction;
@@ -16,4 +18,9 @@
   @media screen and (max-width: 767px) {
     padding: 0 5%;
   }
+}
+
+@mixin gradient($opacity: 1) {
+  background: linear-gradient(color.$orange-fb8, color.$pink-ac4);
+  opacity: $opacity;
 }

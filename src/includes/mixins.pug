@@ -1,0 +1,5 @@
+mixin picture(classname, path, type, alt) 
+  picture(class = classname)
+    source(srcset="/img/" + path + ".webp", type="image/webp")
+    source(srcset="/img/" + path + "." + type, type=`image/${(type=="jpeg") ? "jpg" : type}`)
+    img(src="/img/" + path + "." + type, alt=alt)&attributes(attributes)

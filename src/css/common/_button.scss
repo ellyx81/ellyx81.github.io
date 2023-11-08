@@ -1,6 +1,7 @@
 @use 'settings/color' as color;
 @use 'settings/font-family' as ff;
 @use 'tools/media-queries' as mq;
+@use 'tools/mixin' as mixin;
 
 .button {
   height: 60px;
@@ -12,6 +13,7 @@
   gap: 18px;
   background: linear-gradient(color.$orange-fb8, color.$pink-ac4);
   transition: 0.5s;
+  @include mixin.gradient();
   @include mq.mx1024 {
     height: 50px;
     padding: 10px 50px;
