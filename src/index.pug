@@ -13,5 +13,33 @@ block content
             img(src="img/icons/download.svg", alt="")
         .banner__image-wrapper.pc
           +picture("banner__image", "/banner/banner", "png", "Giselle Santos picture").contain
+
+    section.section.tech-stack
+      .tech-stack__content.section__content
+        h2.heading.heading--small My Tech Stack
+        .tech-stack__container
+          - 
+            const tech = [
+              ["HTML5", "https://developer.mozilla.org/en-US/docs/Web/HTML" ],
+              ["CSS3", "https://developer.mozilla.org/en-US/docs/Web/CSS" ],
+              ["JavaScript", "https://developer.mozilla.org/en-US/docs/Web/JavaScript" ],
+              ["TypeScript", "https://www.typescriptlang.org/" ],
+              ["PHP", "https://www.php.net/" ],
+              ["JQuery", "https://api.jquery.com/" ],
+              ["Git", "https://git-scm.com/" ],
+              ["WordPress", "https://wordpress.org/" ],
+              ["PugJS", "https://pugjs.org/" ],
+              ["Sass", "https://sass-lang.com/" ],
+              ["Bootstrap", "https://getbootstrap.com/" ],
+              ["React-Native", "https://reactnative.dev/" ],
+              ["NodeJS", "https://nodejs.org/en" ],
+              ["MySQL", "https://www.mysql.com/" ],
+              ["Java", "https://www.java.com/en/" ] 
+          - ]
+            each item in tech
+              a.tech-stack__item(href=item[1], target="_blank")
+                img(src=`img/tech-stack/${item[0]}.svg`, alt=item[0]).contain
+
+
 block script
   script(src="js/top/index.ts")

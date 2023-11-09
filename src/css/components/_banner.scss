@@ -18,10 +18,6 @@
   &__subheading,
   &__text {
     position: relative;
-  //  padding-left: 20px;
-    @include mq.sp{
-      padding-left: 0;
-    }
 
     &::before {
       white-space: pre;
@@ -58,7 +54,6 @@
 
   &__wrapper {
     margin-top: 30px;
-    padding-left: 25px;
     flex: 1;
     z-index: 5;
     display: flex;
@@ -70,18 +65,19 @@
     @include mq.sp {
       text-align: center;
       align-items: center;
-      padding-left: 0;
     }
 
     &::before {
       content: '<html> \00000A \00a0 \00a0 <body>';
       top: -4em;
+      left: -3em;
       line-height: 1.6em;
       color: color.$yellow-ffb;
     }
 
     &::after {
       top: -3.5em;
+      left: -3em;
       transform: none;
       height: 100%;
       background-color: color.$gray-c5c;
@@ -105,7 +101,6 @@
     font: 9.6rem ff.$krona;
     line-height: func.getem(96, 112.3);
     color: color.$pink-f85;
-    margin-left: -10px;
     @include mq.mx1024 {
       font-size: 7.6rem;
     }
@@ -122,7 +117,7 @@
   }
 
   &__image-wrapper {
-    width: 50%;
+    width: 45%;
     height: 100%;
     position: relative;
     margin-top: 60px;

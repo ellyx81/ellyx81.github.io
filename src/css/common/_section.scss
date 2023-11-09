@@ -1,21 +1,39 @@
 @use 'tools/mixin' as mixin;
 @use 'tools/media-queries' as mq;
 @use 'tools/function' as func;
+@use 'settings/color' as color;
 
 .section {
   font-size: 1.6rem;
   line-height: func.getem(16, 25);
-  padding: 150px 0;
+  padding-top: 150px;
+  position: relative;
+  overflow-x: clip;
   @include mq.tablet {
     font-size: 1.3rem;
   }
-  @include mq.mx1024 {
-    height: auto;
-    padding: 75px 0;
-    overflow-x: hidden;
+  @include mq.sp {
+    padding-top: 100px;
+  }
+
+  &:last-child {
+    padding-bottom: 150px;
+    @include mq.sp {
+      padding-bottom: 100px;
+    }
   }
 
   &__content {
+    position: relative;
     @include mixin.max-width;
+
+    &::before {
+      content: '';
+      position: absolute;
+      background-color: color.$white;
+      opacity: 0.05;
+      z-index: -1;
+      mask: none;
+    }
   }
 }
