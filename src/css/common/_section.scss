@@ -27,7 +27,8 @@
     position: relative;
     @include mixin.max-width;
 
-    &::before {
+    &::before,
+    &::after {
       content: '';
       position: absolute;
       background-color: color.$white;

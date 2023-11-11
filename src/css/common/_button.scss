@@ -11,16 +11,12 @@
   gap: 18px;
   background: linear-gradient(color.$orange-fb8, color.$pink-ac4);
   transition: 0.5s;
-  @include mixin.center;
+  @include mixin.center($direction: row);
   @include mixin.gradient();
   @include mq.mx1024 {
     gap: 15px;
     min-width: 290px;
     padding: 10px 30px;
-  }
-
-  &--icon-left {
-    flex-direction: row-reverse;
   }
 
   &:hover {
@@ -29,7 +25,6 @@
     & span,
     & img {
       opacity: 1;
-      transition: 0.1s;
     }
   }
 
@@ -49,5 +44,30 @@
     width: 18px;
     height: 18px;
     object-fit: contain;
+  }
+
+  &--icon-left {
+    flex-direction: row-reverse;
+  }
+
+  &--small {
+    height: 40px;
+    padding: 16px 40px;
+    @include mq.mx1024 {
+      min-width: unset;
+    }
+
+    &:hover {
+      box-shadow: 0 3px 10px 2px rgb(172, 64, 71, 0.5);
+    }
+
+    span {
+      font-size: 1.2rem;
+    }
+
+    img {
+      width: 14px;
+      height: 14px;
+    }
   }
 }

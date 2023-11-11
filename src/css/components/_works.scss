@@ -1,0 +1,263 @@
+@use 'settings/color' as color;
+@use 'settings/font-family' as ff;
+@use 'settings/font-weight' as fw;
+@use 'tools/mixin' as mixin;
+@use 'tools/media-queries' as mq;
+@use 'tools/function' as func;
+
+.works {
+  $p: &;
+
+  &__content {
+
+    &::before {
+      top: -1%;
+      left: -7%;
+      width: 220px;
+      height: 220px;
+      mask: url('../img/decors/diamond-dots.svg') center / contain no-repeat;
+      @include mq.mx1024 {
+        left: -3%;
+        width: 200px;
+        height: 200px;
+      }
+      @include mq.sp {
+        left: -5%;
+        width: 160px;
+        height: 160px;
+      }
+    }
+
+    &::after {
+      top: 0;
+      right: -10%;
+      width: 230px;
+      height: 80px;
+      mask: url('../img/decors/right-carets.svg') center / contain no-repeat;
+      @include mq.mx1024 {
+        right: -3%;
+        width: 210px;
+        height: 60px;
+      }
+      @include mq.sp {
+        display: none;
+        // width: 160px;
+        // height: 40px;
+      }
+    }
+  }
+
+  &__container {
+    margin-top: 50px;
+    @include mq.mx1024 {
+      margin-top: 40px;
+    }
+  }
+
+  &__item {
+    display: block;
+    width: 100%;
+    padding: 45px 60px;
+    overflow: hidden;
+    position: relative;
+    border-radius: 30px;
+    font-size: 1.4rem;
+    transition: 0.3s;
+    @include mq.mx1024 {
+      padding: 35px 5%;
+      border-radius: 20px;
+      font-size: 1.2rem;
+    }
+    @include mq.sp {
+      padding: 35px 9%;
+    }
+
+    &::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background-color: rgb(128, 128, 128, 0.08);
+      backdrop-filter: blur(6px);
+      transition: background 0.5s;
+      pointer-events: none;
+    }
+
+    &:not(:last-child) {
+      margin-bottom: 40px;
+      @include mq.mx1024 {
+        margin-bottom: 25px;
+      }
+    }
+
+    & > * {
+      position: relative;
+      z-index: 2;
+    }
+
+    &:hover {
+      box-shadow: rgb(0 0 0 / 0.25) 25px 25px 25px 0px;
+      transform: scale(1.01);
+
+      &::before {
+        background-color: rgb(172, 64, 71, 0.08);
+        backdrop-filter: blur(10px);
+      }
+
+      #{$p}__heading:last-child::after {
+        left: 130%;
+      }
+
+      #{$p}__img {
+        transform: rotate(0deg) scale(1.1);
+
+        &--tablet {
+          transform: rotate(0deg) scale(1.1) translate(-10px);
+        }
+
+        &--phone {
+          transform: rotate(0deg) scale(1.2) translate(-20px, -40%);
+        }
+      }
+    }
+  }
+
+  &__text-wrap {
+    width: 60%;
+    display: flex;
+    flex-direction: column;
+    gap: 30px;
+    @include mq.mx1024 {
+      gap: 20px;
+    }
+    @include mq.sp {
+      width: 100%;
+    }
+  }
+
+  &__logo {
+    width: 50px;
+    height: 50px;
+    border-radius: 10px;
+  }
+
+  &__text-grp {
+
+    &:first-of-type {
+      min-height: 120px;
+      @include mq.mx1024 {
+        min-height: 80px;
+      }
+    }
+
+    &:last-of-type {
+      min-height: 80px;
+      @include mq.mx1024 {
+        min-height: 60px;
+      }
+    }
+  }
+
+  &__name {
+    font: fw.$semibold 3rem ff.$mont;
+    @include mq.mx1024 {
+      font-size: 2.4rem;
+    }
+  }
+
+  &__heading {
+    font-size: 1.8rem;
+    @include mq.mx1024 {
+      font-size: 1.6rem;
+    }
+
+    &:last-child {
+      font-weight: fw.$semibold;
+      position: relative;
+      width: fit-content;
+
+      &::after {
+        content: '';
+        position: absolute;
+        left: 120%;
+        top: 50%;
+        transform: translateY(-50%);
+        width: 1em;
+        height: 1em;
+        background: url('../img/icons/arrow-right.svg') no-repeat center/100% 100%;
+        transition: 0.3s;
+      }
+    }
+  }
+
+  &__name,
+  &__heading {
+    display: block;
+    margin-bottom: .5em;
+  }
+
+  &__text {
+    color: color.$gray-808;
+  }
+
+  &__img {
+    position: absolute;
+    display: block;
+    bottom: 0;
+    right: -15%;
+    width: 50%;
+    aspect-ratio: 744/433;
+    transform: rotate(-5deg);
+    z-index: 2;
+    pointer-events: none;
+    transition: 0.3s;
+    @include mq.sp {
+      display: none;
+    }
+
+    &::after {
+      content: '';
+      position: absolute;
+      aspect-ratio: 962/569;
+      width: 128%;
+      top: -15%;
+      left: 50%;
+      transform: translateX(-50%);
+      background: url('../img/works/laptop-screen.png') no-repeat center / contain;
+      z-index: 3;
+    }
+
+    &--tablet {
+      bottom: -20px;
+      right: 6%;
+      width: 25%;
+      aspect-ratio: 633/790;
+      transform: rotate(5deg);
+      
+      &::after {
+        top: -17%;
+        width: 111%;
+        aspect-ratio: 703/1011;
+        background: url('../img/works/tablet-screen.png') no-repeat center / contain;
+        z-index: -1;
+      }
+    }
+
+    &--phone {
+      top: 50%;
+      right: 10%;
+      width: 16%;
+      aspect-ratio: 521/1158;
+      transform: rotate(-5deg) translateY(-50%);
+
+      &::after {
+        width: 162%;
+        top: -1.5%;
+        aspect-ratio: 703/1011;
+        background: url('../img/works/phone-screen.png') no-repeat center / contain;
+      }
+    }
+  }
+}

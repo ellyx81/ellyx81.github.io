@@ -7,7 +7,7 @@ block content
         .banner__wrapper
           h2.banner__subheading FRONT-END DEVELOPER
           h1.banner__heading Giselle Santos
-          p.banner__text A front-end developer from Naic, Cavite. I specialize in building responsive websites and landing pages using WordPress.
+          p.banner__text.gray A front-end developer from Naic, Cavite. I specialize in building responsive websites and landing pages using WordPress.
           a.button.button--icon-left(href="")
             span Download my CV
             img(src="img/icons/download.svg", alt="")
@@ -40,6 +40,50 @@ block content
               a.tech-stack__item(href=item[1], target="_blank")
                 img(src=`img/tech-stack/${item[0]}.svg`, alt=item[0]).contain
 
+    section.section.works#works
+      .works__content.section__content
+        h2.heading.center My Works
+        .works__container
+          +worksItem(
+            'My Home', 
+            'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed mattis elementum libero ac mollis. In nec ultricies nunc, molestie ornare arcu.', 
+            'Helped in coding some pages and parts, and implemented post type WordPress functionality.', 
+            'https://www.myhome-co.com/', 
+            'live', 
+            'my-home', 
+            'pc')
+          +worksItem(
+            'Toolbox Shop', 
+            'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed mattis elementum libero ac mollis. In nec ultricies nunc, molestie ornare arcu.', 
+            'Helped in coding some pages, conducted code reviews for team members.', 
+            'https://toolbox1.co.jp/shop/', 
+            'live', 
+            'toolbox', 
+            'pc')
+          +worksItem(
+            'Yeeell - Churu Channel', 
+            'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed mattis elementum libero ac mollis. In nec ultricies nunc, molestie ornare arcu.', 
+            'Coded whole page, including contact form.', 
+            'https://toolbox1.co.jp/shop/', 
+            'demo', 
+            'yeeell', 
+            'tablet')
+          +worksItem(
+            'Coolex', 
+            'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed mattis elementum libero ac mollis. In nec ultricies nunc, molestie ornare arcu.', 
+            'Coded whole page, including contact form.', 
+            'https://toolbox1.co.jp/shop/', 
+            'demo', 
+            'coolex', 
+            'tablet')
+          +worksItem(
+            'Nethix', 
+            'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed mattis elementum libero ac mollis. In nec ultricies nunc, molestie ornare arcu.', 
+            'Sole front-end/backend developer and designer', 
+            'https://youtu.be/3JPUh-Nk-NQ?si=OgSFrPIXZ2yxmvP6', 
+            'video', 
+            'nethix', 
+            'phone')
 
 block script
   script(src="js/top/index.ts")

@@ -53,13 +53,14 @@
   }
 
   &__wrapper {
-    margin-top: 30px;
+    margin-top: 50px;
     flex: 1;
     z-index: 5;
     display: flex;
     flex-direction: column;
     gap: 45px;
     @include mq.mx1024 {
+      margin-top: 30px;
       gap: 40px;
     }
     @include mq.sp {
@@ -98,11 +99,11 @@
   }
 
   &__heading {
-    font: 9.6rem ff.$krona;
+    font: 8rem ff.$krona;
     line-height: func.getem(96, 112.3);
     color: color.$pink-f85;
     @include mq.mx1024 {
-      font-size: 7.6rem;
+      font-size: 7.5rem;
     }
     @include mq.sp-sm {
       font-size: 58px;

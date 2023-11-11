@@ -3,3 +3,33 @@ mixin picture(classname, path, type, alt)
     source(srcset="/img/" + path + ".webp", type="image/webp")
     source(srcset="/img/" + path + "." + type, type=`image/${(type=="jpeg") ? "jpg" : type}`)
     img(src="/img/" + path + "." + type, alt=alt)&attributes(attributes)
+
+
+mixin worksItem(name, desc, cont, link, linkType, img, device)
+  a.works__item(href=link, target="_blank")
+    .works__text-wrap
+      img.works__logo(src="img/works/"+img+"-logo.png", alt=name+" logo").cover.overflow
+      .works__text-grp
+        h3.works__name= name 
+        p.works__text= desc 
+      .works__text-grp
+        span.works__heading Role
+        p.works__text= cont 
+      case linkType
+        when 'live'
+          span.works__heading View Live
+        when 'demo'
+          span.works__heading View Demo
+        when 'video'
+          span.works__heading Watch Demo
+        default
+          span
+    case device 
+      when 'pc'
+        +picture("works__img", "/works/"+img, "png", name+" PC screenshot").cover
+      when 'tablet'
+        +picture("works__img works__img--tablet", "/works/"+img, "png", name+" tablet screenshot").cover
+      when 'phone'
+        +picture("works__img works__img--phone", "/works/"+img, "png", name+" phone screenshot").cover
+      default
+        .works__img

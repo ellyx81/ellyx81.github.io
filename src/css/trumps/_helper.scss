@@ -1,28 +1,12 @@
 @use 'settings/color' as color;
 @use 'tools/media-queries' as mq;
 
-.white {
-  color: color.$white;
+.center {
+  text-align: center;
 }
 
-.white-bg {
-  background: color.$white;
-}
-
-.black {
-  color: color.$black;
-}
-
-.black-bg {
-  background: color.$black;
-}
-
-.primary {
-  color: color.$primary;
-}
-
-.primary-bg {
-  background: color.$primary;
+.gray {
+  color: color.$gray-808;
 }
 
 .overflow {
