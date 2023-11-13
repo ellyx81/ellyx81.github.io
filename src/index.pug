@@ -8,11 +8,22 @@ block content
           h2.banner__subheading FRONT-END DEVELOPER
           h1.banner__heading Giselle Santos
           p.banner__text.gray A front-end developer from Naic, Cavite. I specialize in building responsive websites and landing pages using WordPress.
-          a.button.button--icon-left(href="")
+          a.button(href="")
+            span Contact Me
+            img(src="img/icons/message.svg", alt="")
+        .banner__image-wrapper.pc
+          +picture("banner__image", "/banner/banner-img", "png", "3d art of a girl").contain
+
+    section.section.about-me#about 
+      .about-me__content.section__content 
+        .about-me__image-wrapper.pc
+          +picture("about-me__image", "/about-me/about-me-img", "png", "3d art of a girl working on a laptop").cover
+        .about-me__wrapper
+          h2.heading About Me
+          p.about-me__text.gray Designing and coding are what I’m passionate about. Sed mattis elementum libero ac mollis. In nec ultricies nunc, molestie ornare arcu. Pellentesque quis euismod justo, a tempus ex. Curabitur a neque ipsum. Nulla pretium enim nec mauris varius scelerisque. 
+          a.button.button--icon-left.button--secondary(href="")
             span Download my CV
             img(src="img/icons/download.svg", alt="")
-        .banner__image-wrapper.pc
-          +picture("banner__image", "/banner/banner", "png", "Giselle Santos picture").contain
 
     section.section.tech-stack
       .tech-stack__content.section__content

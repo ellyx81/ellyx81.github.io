@@ -12,77 +12,22 @@
     position: relative;
     display: flex;
     align-items: center;
-  }
-
-  &__wrapper,
-  &__subheading,
-  &__text {
-    position: relative;
-
-    &::before {
-      white-space: pre;
-      position: absolute;
-      top: 50%;
-      transform: translateY(-50%);
-      left: -20px;
-      font: 1.5rem ff.$fira;
-      line-height: 1.4em;
-      color: color.$yellow-ffb;
-      opacity: 0.2;
-      z-index: -1;
-      @include mq.sp{
-        display: none;
-      }
-    }
-
-    &:after {
-      content: '';
-      position: absolute;
-      width: 1px;
-      height: 110%;
-      top: 50%;
-      transform: translateY(-50%);
-      left: -20px;
-      background-color: color.$yellow-ffb;
-      opacity: 0.2;
-      z-index: -1;
-      @include mq.sp{
-        display: none;
-      }
-    }
+    gap: 5%;
   }
 
   &__wrapper {
-    margin-top: 50px;
     flex: 1;
     z-index: 5;
     display: flex;
     flex-direction: column;
-    gap: 45px;
+    gap: 35px;
     @include mq.mx1024 {
       margin-top: 30px;
-      gap: 40px;
+      gap: 30px;
     }
     @include mq.sp {
       text-align: center;
       align-items: center;
-    }
-
-    &::before {
-      content: '<html> \00000A \00a0 \00a0 <body>';
-      top: -4em;
-      left: -3em;
-      line-height: 1.6em;
-      color: color.$yellow-ffb;
-    }
-
-    &::after {
-      top: -3.5em;
-      left: -3em;
-      transform: none;
-      height: 100%;
-      background-color: color.$gray-c5c;
-      opacity: 0.1;
     }
   }
 
@@ -92,28 +37,17 @@
     @include mq.mx1024 {
       font-size: 2rem;
     }
-
-    &::before {
-      content: '<h2> \00000A \00000A \00000A </h2>';
-    }
   }
 
   &__heading {
     font: 8rem ff.$krona;
     line-height: func.getem(96, 112.3);
-    color: color.$pink-f85;
+    color: color.$pink-ff4;
     @include mq.mx1024 {
       font-size: 7.5rem;
     }
     @include mq.sp-sm {
       font-size: 58px;
-    }
-  }
-
-  &__text {
-
-    &::before {
-      content: '<p> \00000A \00000A \00000A \00000A \00000A </p>';
     }
   }
 
@@ -143,22 +77,22 @@
       top: 50%;
       left: 50%;
       transform: translate(-50%, -50%);
-      box-shadow: 90px -70px 200px 170px color.$orange-fb8;
-      opacity: 0.2;
-      z-index: -1;
+      box-shadow: 90px -70px 200px 170px color.$pink-ac4;
+      opacity: 0.1;
+      z-index: -2;
     }
   }
 
   &__image {
     display: block;
-    width: 70%;
+    width: 79%;
     height: 100%;
     margin: 0 10% 0 auto;
 
     &::before {
       content: '';
       position: absolute;
-      top: -7%;
+      top: -8.5%;
       left: 15%;
       width: 80%;
       height: 100%;
@@ -169,8 +103,7 @@
     }
 
     img {
-      mask: url("../img/banner/rounded-rectangle.svg") center 90% / 152% no-repeat;
-      z-index: 2;
+      mask: url("../img/banner/rounded-rectangle.svg") center 98% / 152% no-repeat;
     }
   }
 }

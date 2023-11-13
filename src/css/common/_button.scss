@@ -5,22 +5,23 @@
 
 .button {
   height: 60px;
-  padding: 16px 64px;
+  padding: 0 64px;
   border-radius: 50px;
   width: fit-content;
   gap: 18px;
-  background: linear-gradient(color.$orange-fb8, color.$pink-ac4);
-  transition: 0.5s;
+  background-image: linear-gradient(to right, color.$orange-fb8, color.$pink-ac4, color.$pink-ac4);
+  background-size: 200% 100%;
+  transition: all .2s ease-in-out;
   @include mixin.center($direction: row);
-  @include mixin.gradient();
   @include mq.mx1024 {
     gap: 15px;
     min-width: 290px;
-    padding: 10px 30px;
+    padding: 0 30px;
   }
 
   &:hover {
-    box-shadow: 0 3px 20px 4px rgb(172, 64, 71, 0.5);
+    background-position: 100% 0;
+    box-shadow: 0 3px 20px 4px rgb(172, 64, 71, 0.3);
 
     & span,
     & img {
@@ -50,15 +51,47 @@
     flex-direction: row-reverse;
   }
 
+  &--secondary {
+    border: 2px solid color.$pink-ac4;
+    border-radius: 0;
+    padding: 0 48px;
+    height: 50px;
+    min-width: 0;
+    background: linear-gradient(to right, color.$pink-ac4 50%, transparent 50%);
+    background-size: 200% 100%;
+    background-position: bottom right;
+    transition: 0.3s;
+    @include mq.sp {
+      padding: 0 30px;
+    }
+
+    &:hover {
+      background-position: bottom left;
+    }
+
+    span {
+      font: 1.4rem ff.$krona;
+      @include mq.mx1024 {
+        font-size: 12px;
+      }
+    }
+  
+    img {
+      width: 14px;
+      height: 14px;
+      object-fit: contain;
+    }
+  }
+
   &--small {
     height: 40px;
-    padding: 16px 40px;
+    padding: 0 30px;
     @include mq.mx1024 {
       min-width: unset;
     }
 
     &:hover {
-      box-shadow: 0 3px 10px 2px rgb(172, 64, 71, 0.5);
+      box-shadow: 0 3px 10px 2px rgb(172, 64, 71, 0.3);
     }
 
     span {

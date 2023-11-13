@@ -11,6 +11,7 @@
   &__content {
 
     &::before {
+      display: block;
       top: -1%;
       left: -7%;
       width: 220px;
@@ -29,6 +30,7 @@
     }
 
     &::after {
+      display: block;
       top: 0;
       right: -10%;
       width: 230px;

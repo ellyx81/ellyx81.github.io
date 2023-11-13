@@ -6,14 +6,21 @@
 .section {
   font-size: 1.6rem;
   line-height: func.getem(16, 25);
-  padding-top: 150px;
+  padding-top: 200px;
   position: relative;
   overflow-x: clip;
   @include mq.tablet {
     font-size: 1.3rem;
   }
   @include mq.sp {
-    padding-top: 100px;
+    padding-top: 150px;
+  }
+
+  &:first-child {
+    padding-top: 150px;
+    @include mq.sp {
+      padding-top: 100px;
+    }
   }
 
   &:last-child {
@@ -34,7 +41,7 @@
       background-color: color.$white;
       opacity: 0.05;
       z-index: -1;
-      mask: none;
+      display: none;
     }
   }
 }

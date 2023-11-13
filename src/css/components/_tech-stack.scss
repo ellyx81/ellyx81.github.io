@@ -7,6 +7,7 @@
   &__content {
     
     &::before {
+      display: block;
       top: -10%;
       right: -10%;
       width: 300px;

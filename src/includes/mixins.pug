@@ -6,7 +6,7 @@ mixin picture(classname, path, type, alt)
 
 
 mixin worksItem(name, desc, cont, link, linkType, img, device)
-  a.works__item(href=link, target="_blank")
+  .works__item
     .works__text-wrap
       img.works__logo(src="img/works/"+img+"-logo.png", alt=name+" logo").cover.overflow
       .works__text-grp
@@ -17,13 +17,21 @@ mixin worksItem(name, desc, cont, link, linkType, img, device)
         p.works__text= cont 
       case linkType
         when 'live'
-          span.works__heading View Live
+          a.button.button--small(href=link)
+            span View Live
+            img(src="img/icons/arrow-right.svg", alt="")
         when 'demo'
-          span.works__heading View Demo
+          a.button.button--small(href=link)
+            span View Demo
+            img(src="img/icons/arrow-right.svg", alt="")
         when 'video'
-          span.works__heading Watch Demo
+          a.button.button--small(href=link)
+            span Watch Demo
+            img(src="img/icons/arrow-right.svg", alt="")
         default
-          span
+          a.button.button--small(href=link)
+            span View Site
+            img(src="img/icons/arrow-right.svg", alt="")
     case device 
       when 'pc'
         +picture("works__img", "/works/"+img, "png", name+" PC screenshot").cover
