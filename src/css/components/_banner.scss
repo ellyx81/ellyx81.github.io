@@ -42,7 +42,7 @@
   &__heading {
     font: 8rem ff.$krona;
     line-height: func.getem(96, 112.3);
-    color: color.$pink-ff4;
+    color: color.$bright-pink;
     @include mq.mx1024 {
       font-size: 7.5rem;
     }
@@ -77,7 +77,7 @@
       top: 50%;
       left: 50%;
       transform: translate(-50%, -50%);
-      box-shadow: 90px -70px 200px 170px color.$pink-ac4;
+      box-shadow: 90px -70px 200px 170px color.$primary;
       opacity: 0.1;
       z-index: -2;
     }

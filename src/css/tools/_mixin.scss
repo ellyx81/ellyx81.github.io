@@ -21,6 +21,6 @@
 }
 
 @mixin gradient($opacity: 1) {
-  background: linear-gradient(color.$orange-fb8, color.$pink-ac4);
+  background: linear-gradient(color.$secondary, color.$primary);
   opacity: $opacity;
 }
