@@ -6,9 +6,10 @@
   font: 6rem ff.$krona;
   @include mq.mx1024 {
     font-size: 5rem;
+    line-height: 1.5em;
   }
   @include mq.sp {
-    font-size: 40px;
+    font-size: 35px;
   }
 
   &--small {

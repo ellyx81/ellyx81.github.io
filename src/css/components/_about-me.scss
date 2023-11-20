@@ -1,9 +1,6 @@
 @use 'settings/color' as color;
-@use 'settings/font-family' as ff;
-@use 'settings/font-weight' as fw;
 @use 'tools/mixin' as mixin;
 @use 'tools/media-queries' as mq;
-@use 'tools/function' as func;
 
 .about-me {
 
@@ -102,13 +99,6 @@
     img {
       object-position: -50px 50px;
       width: 125%;
-    }
-  }
-
-  &__text {
-    font-size: 1.4rem;
-    @include mq.mx1024{
-      font-size: 1.3rem;
     }
   }
 }

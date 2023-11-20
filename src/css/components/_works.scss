@@ -59,7 +59,7 @@
   &__item {
     display: block;
     width: 100%;
-    padding: 45px 60px;
+    padding: 50px;
     overflow: hidden;
     position: relative;
     border-radius: 30px;
@@ -104,8 +104,8 @@
       transform: scale(1.01);
 
       &::before {
-        background-color: rgb(172, 64, 71, 0.08);
-        backdrop-filter: blur(10px);
+        background-color: rgb(172, 64, 71, 0.15);
+        backdrop-filter: blur(7px);
       }
 
       #{$p}__heading:last-child::after {

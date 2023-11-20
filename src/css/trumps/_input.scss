@@ -1,0 +1,47 @@
+@use 'settings/color' as color;
+@use 'settings/font-family' as ff;
+@use 'settings/font-weight' as fw;
+@use 'tools/mixin' as mixin;
+@use 'tools/media-queries' as mq;
+@use 'tools/function' as func;
+
+input,
+textarea,
+button {
+  color: color.$white;
+  border: none;
+  background: none;
+}
+
+input,
+textarea {
+  font: 0.9em ff.$mont;
+  padding: 1em 2em;
+  border-radius: 25px;
+  background-color: color.$dark-pink;
+  @include mq.mx1024 {
+    border-radius: 20px;
+  }
+
+  &:focus {
+    outline: 1px solid color.$primary;
+    outline-offset: -1px;
+  }
+}
+
+textarea {
+  resize: none;
+  padding: 1.5em 2em;
+}
+
+button {
+  cursor: pointer;
+  
+  &:focus {
+    outline: none;
+  }
+}
+
+::placeholder {
+  color: color.$text;
+}

@@ -96,5 +96,40 @@ block content
             'nethix', 
             'phone')
 
+    section.section.contact#contact
+      .contact__content.section__content
+        h2.heading.center Let's work together!
+        span.contact__text.gray Want to discuss an opportunity to create something great? I’m ready when you are.
+        form(action="" name="contact-form").contact__form
+          .contact__input-wrap 
+            label.contact__label Email
+            input(type="email" placeholder="Enter your email" required).contact__input
+          .contact__input-wrap
+            label.contact__label Name
+            input(type="text" placeholder="Enter your name" required).contact__input
+          .contact__input-wrap
+            label.contact__label Subject
+            input(type="text" placeholder="Enter e-mail subject" required).contact__input
+          .contact__input-wrap
+            label.contact__label.contact__label--norequire Message:
+            textarea(placeholder="Write your message..." rows="15").contact__input
+          button.button.contact__button(href="")
+            span Send message
+            img(src="img/icons/plane.svg", alt="")
+        span.contact__text Or you can contact me directly... :)
+        .contact__link-container 
+          a(href="mailto: santosgiselle801@gmail.com").contact__link
+            img(src="img/icons/message.svg", alt="")
+          a(href="tel:09764414177").contact__link
+            img(src="img/icons/phone.svg", alt="")
+          a(href="https://www.linkedin.com/in/giselle-santos-0017a7298/").contact__link
+            img(src="img/icons/linkedin.svg", alt="")
+          a(href="https://www.facebook.com/Ellyx08/").contact__link
+            img(src="img/icons/facebook.svg", alt="")
+          a(href="https://github.com/ellyx81").contact__link
+            img(src="img/icons/github.svg", alt="")
+
+
+
 block script
   script(src="js/top/index.ts")
