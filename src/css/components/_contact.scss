@@ -50,34 +50,22 @@
   &__text {
     display: block;
     text-align: center;
-    margin-top: 50px;
-    @include mq.mx1024 {
-      margin-top: 40px;
-      font-size: 1.4rem;
-    }
+    margin-top: 2em;
   }
 
   &__form,
   &__link-container {
     max-width: 800px;
-    margin: 40px auto 0;
-    @include mq.mx1024 {
-      margin: 30px auto 0;
-    }
+    margin: 2.5em auto 0;
   }
 
   &__form {
-    padding: 60px 0;
-    border-radius: 50px;
+    padding: 3em 0;
+    border-radius: 2.5em;
     overflow: hidden;
     position: relative;
-    @include mq.mx1024 {
-      padding: 40px;
-      border-radius: 40px;
-    }
     @include mq.sp {
-      padding: 30px;
-      border-radius: 30px;
+      padding: 3em;
     }
 
     &::before {
@@ -94,17 +82,15 @@
   }
 
   &__input-wrap {
-    margin: 0 auto 40px;
+    margin: 0 auto 1.8em;
     display: flex;
     flex-direction: column;
-    gap: 1em;
+    gap: 0.6em;
     max-width: 500px;
-    @include mq.mx1024 {
-      margin: 0 auto 30px;
-    }
   }
 
   &__label {
+    font-size: 0.9em;
     margin-left: 1em;
 
     &::after {
@@ -128,8 +114,9 @@
 
   &__button {
     margin: 0 auto;
-    @include mq.sp-sm {
-      min-width: 100%;
+    @include mq.sp-m {
+      padding: 0 1.5em;
+      width: 100%;
     }
   }
 
@@ -148,10 +135,6 @@
     overflow: hidden;
     transition: 0.3s ease-in-out;
     @include mixin.center;
-    @include mq.sp {
-      width: 4em;
-      height: 4em;
-    }
 
     &::before {
       content: '';
@@ -167,10 +150,6 @@
     img {
       width: 2em;
       height: 2em;
-      @include mq.sp {
-        width: 1.5em;
-        height: 1.5em;
-      }
     }
 
     &:hover {

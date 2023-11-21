@@ -6,7 +6,7 @@ block content
       .banner__content.section__content
         .banner__wrapper
           h2.banner__subheading FRONT-END DEVELOPER
-          h1.banner__heading Giselle Santos
+          h1.heading.heading--large Giselle Santos
           p.banner__text.gray A front-end developer from Naic, Cavite. I specialize in building responsive websites and landing pages using WordPress.
           a.button(href="")
             span Contact Me
@@ -19,7 +19,8 @@ block content
         .about-me__image-wrapper.pc
           +picture("about-me__image", "/about-me/about-me-img", "png", "3d art of a girl working on a laptop").cover
         .about-me__wrapper
-          h2.heading About Me
+          .section__heading
+            h2.heading About Me
           p.about-me__text.gray Designing and coding are what I’m passionate about. Sed mattis elementum libero ac mollis. In nec ultricies nunc, molestie ornare arcu. Pellentesque quis euismod justo, a tempus ex. Curabitur a neque ipsum. Nulla pretium enim nec mauris varius scelerisque. 
           a.button.button--icon-left.button--secondary(href="")
             span Download my CV
@@ -27,7 +28,8 @@ block content
 
     section.section.tech-stack
       .tech-stack__content.section__content
-        h2.heading.heading--small My Tech Stack
+        .section__heading
+          h2.heading.heading--small My Tech Stack
         .tech-stack__container
           - 
             const tech = [
@@ -53,7 +55,8 @@ block content
 
     section.section.works#works
       .works__content.section__content
-        h2.heading.center My Works
+        .section__heading
+          h2.heading.center My Works
         .works__container
           +worksItem(
             'My Home', 
@@ -81,7 +84,7 @@ block content
             'tablet')
           +worksItem(
             'Coolex', 
-            'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed mattis elementum libero ac mollis. In nec ultricies nunc, molestie ornare arcu.', 
+            'Lorem ipsum dolor sit amet', 
             'Coded whole page, including contact form.', 
             'https://toolbox1.co.jp/shop/', 
             'demo', 
@@ -89,8 +92,8 @@ block content
             'tablet')
           +worksItem(
             'Nethix', 
-            'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed mattis elementum libero ac mollis. In nec ultricies nunc, molestie ornare arcu.', 
-            'Sole front-end/backend developer and designer', 
+            'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed mattis elementum libero ac mollis. In nec ultricies nunc, molestie ornare arcu.Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed mattis elementum libero ac mollis. In nec ultricies nunc, molestie ornare arcu.Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed mattis elementum libero ac mollis. In nec ultricies nunc, molestie ornare arcu.', 
+            'Sole front-end/backend developer and designer. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed mattis elementum libero ac mollis. In nec ultricies nunc, molestie ornare arcu.Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed mattis elementum libero ac mollis. In nec ultricies nunc, molestie ornare arcu.', 
             'https://youtu.be/3JPUh-Nk-NQ?si=OgSFrPIXZ2yxmvP6', 
             'video', 
             'nethix', 
@@ -98,7 +101,8 @@ block content
 
     section.section.contact#contact
       .contact__content.section__content
-        h2.heading.center Let's work together!
+        .section__heading
+          h2.heading.center Let's work together!
         span.contact__text.gray Want to discuss an opportunity to create something great? I’m ready when you are.
         form(action="" name="contact-form").contact__form
           .contact__input-wrap 
@@ -113,7 +117,7 @@ block content
           .contact__input-wrap
             label.contact__label.contact__label--norequire Message:
             textarea(placeholder="Write your message..." rows="15").contact__input
-          button.button.contact__button(href="")
+          button.button.button--hover-up.contact__button(href="")
             span Send message
             img(src="img/icons/plane.svg", alt="")
         span.contact__text Or you can contact me directly... :)

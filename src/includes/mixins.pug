@@ -17,19 +17,19 @@ mixin worksItem(name, desc, cont, link, linkType, img, device)
         p.works__text= cont 
       case linkType
         when 'live'
-          a.button.button--small(href=link)
+          a.button.button--small.button--hover-right(href=link)
             span View Live
             img(src="img/icons/arrow-right.svg", alt="")
         when 'demo'
-          a.button.button--small(href=link)
+          a.button.button--small.button--hover-right(href=link)
             span View Demo
             img(src="img/icons/arrow-right.svg", alt="")
         when 'video'
-          a.button.button--small(href=link)
+          a.button.button--small.button--hover-right(href=link)
             span Watch Demo
             img(src="img/icons/arrow-right.svg", alt="")
         default
-          a.button.button--small(href=link)
+          a.button.button--small.button--hover-right(href=link)
             span View Site
             img(src="img/icons/arrow-right.svg", alt="")
     case device 

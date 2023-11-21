@@ -1,6 +1,4 @@
-@use 'tools/mixin' as mixin;
 @use 'tools/media-queries' as mq;
-@use 'settings/color' as color;
 
 .tech-stack {
 
@@ -10,17 +8,17 @@
       display: block;
       top: -10%;
       right: -10%;
-      width: 300px;
-      height: 300px;
+      width: 17em;
+      height: 17em;
       mask: url('../img/decors/circle-stripe.svg') center / contain no-repeat;
       @include mq.mx1024 {
         right: 0;
-        width: 250px;
-        height: 250px;
+        width: 16em;
+        height: 16em;
       }
       @include mq.sp {
-        width: 200px;
-        height: 200px;
+        width: 14em;
+        height: 14em;
         right: -10%
       }
     }
@@ -28,23 +26,23 @@
   
   &__container {
     display: grid;
-    width: 80%;
+    width: 75%;
     margin: 50px auto 0;
     grid-template-columns: repeat(5, 9%);
     justify-content: space-between;
-    gap: 50px;
-
+    gap: 40px;
     @include mq.mx1024 {
       margin: 40px auto 0;
       gap: 30px;
     }
     @include mq.sp {
-      grid-template-columns: repeat(3, 16%);
-      max-width: 400px;
+      margin: 30px auto 0;
+      gap: 20px;
+      width: 80%;
     }
     @include mq.sp-m {
       grid-template-columns: repeat(3, 18%);
-      max-width: 290px;
+      max-width: 250px;
     }
   }
 
@@ -53,19 +51,6 @@
     height: auto;
     position: relative;
     transition: 0.3s;
-
-    &::before {
-      content: '';
-      position: absolute;
-      top: 50%;
-      left: 50%;
-      transform: translate(-50%, -50%);
-      width: 60%;
-      height: 0;
-      z-index: -1;
-      opacity: 0.4;
-      transition: 0.3s;
-    }
 
     &:hover {
       transform: translateY(-10px);

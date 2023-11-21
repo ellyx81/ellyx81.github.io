@@ -16,7 +16,7 @@ button {
 input,
 textarea {
   font: 0.9em ff.$mont;
-  padding: 1em 2em;
+  padding: 1em 1.8em;
   border-radius: 25px;
   background-color: color.$dark-pink;
   @include mq.mx1024 {
@@ -31,7 +31,7 @@ textarea {
 
 textarea {
   resize: none;
-  padding: 1.5em 2em;
+  padding: 1.5em 1.8em;
 }
 
 button {

@@ -6,45 +6,36 @@
 
   &__content {
     @include mixin.center($direction: 'row');
+
     gap: 10%;
 
     &::before {
       display: block;
       top: -15%;
       right: 5%;
-      width: 220px;
-      height: 220px;
+      width: 13.75em;
+      height: 13.75em;
       transform: rotate(-30deg);
       mask: url('../img/decors/rounded-rectangle-stroke-thin.svg') center / contain no-repeat;
-      opacity: 0.05;
-      @include mq.mx1024 {
-        width: 170px;
-        height: 170px;
-        right: 10%;
-      }
       @include mq.sp {
-        width: 160px;
-        height: 160px;
+        right: 11%;
+        width: 10em;
+        height: 10em;
       }
     }
 
     &::after {
       display: block;
-      top: -25%;
-      right: -10%;
-      width: 250px;
-      height: 250px;
+      top: -15%;
+      right: -6.5%;
+      width: 12em;
+      height: 12em;
       transform: rotate(-30deg);
       mask: url('../img/decors/square-dots.svg') center / contain no-repeat;
-      opacity: 0.12;
-      @include mq.mx1024 {
-        width: 200px;
-        height: 200px;
-        right: -5%;
-      }
       @include mq.sp {
-        width: 180px;
-        height: 180px;
+        width: 8em;
+        height: 8em;
+        right: 0;
       }
     }
   }
@@ -70,7 +61,7 @@
     flex: 1;
     display: flex;
     flex-direction: column;
-    gap: 30px;
+    gap: 2em;
     @include mq.sp {
       align-items: center;
       text-align: center;
