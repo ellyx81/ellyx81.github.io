@@ -1,3 +1,6 @@
-$mont: 'Montserrat', sans-serif;
-$krona: 'Krona One', sans-serif;
-$fira: 'Fira Mono', monospace;
+@font-face {
+  font-family: "Specify";
+  src: url("/fonts/SpecifyPERSONAL-ExpBold.ttf");
+}
+$text: 'Montserrat', sans-serif;
+$heading:'Specify', sans-serif;

@@ -1,23 +1,19 @@
 @use 'settings/color' as color;
 @use 'settings/font-family' as ff;
+@use 'settings/font-weight' as fw;
 @use 'tools/media-queries' as mq;
 @use 'tools/mixin' as mixin;
 
 .button {
-  height: 60px;
-  padding: 0 64px;
+  height: 3.8em;
+  padding: 0 4em;
   border-radius: 50px;
   width: fit-content;
-  gap: 18px;
+  gap: 0.8em;
   background-image: linear-gradient(to right, color.$secondary, color.$primary, color.$primary);
   background-size: 200% 100%;
   transition: all .2s ease-in-out;
   @include mixin.center($direction: row);
-  @include mq.mx1024 {
-    gap: 15px;
-    min-width: 290px;
-    padding: 0 30px;
-  }
 
   &:hover {
     background-position: 100% 0;
@@ -35,19 +31,16 @@
   }
 
   span {
-    font: 1.8rem ff.$krona;
-    @include mq.mx1024 {
-      font-size: 1.6rem;
-    }
-    @include mq.sp {
-      font-size: 1.4rem;
-    }
+    font: fw.$semibold 1.2em ff.$text;
+   // letter-spacing: 0.08em;
+    text-transform: uppercase;
   }
 
   img {
-    width: 18px;
-    height: 18px;
+    width: 1.2em;
+    height: 1.2em;
     object-fit: contain;
+    transition: 0.3s;
   }
 
   &--icon-left {
@@ -55,55 +48,68 @@
   }
 
   &--secondary {
-    border: 2px solid color.$primary;
+    outline: 2px solid color.$primary;
+    outline-offset: -1px;
     border-radius: 0;
-    padding: 0 48px;
-    height: 50px;
-    min-width: 0;
+    padding: 0 3em;
+    height: 3.4em;
     background: linear-gradient(to right, color.$primary 50%, transparent 50%);
     background-size: 200% 100%;
     background-position: bottom right;
     transition: 0.3s;
-    @include mq.sp {
-      padding: 0 30px;
-    }
 
     &:hover {
       background-position: bottom left;
     }
-
+    
     span {
-      font: 1.4rem ff.$krona;
-      @include mq.mx1024 {
-        font-size: 12px;
-      }
+      font-size: 1em;
     }
   
     img {
-      width: 14px;
-      height: 14px;
+      width: 0.9em;
+      height: 0.9em;
       object-fit: contain;
     }
   }
 
   &--small {
-    height: 40px;
-    padding: 0 30px;
-    @include mq.mx1024 {
-      min-width: unset;
-    }
+    height: 2.8em;
+    padding: 0;
+    width: 11em;
 
     &:hover {
       box-shadow: 0 3px 10px 2px rgb(172, 64, 71, 0.3);
     }
 
     span {
-      font-size: 1.2rem;
+      font-size: 0.9em;
     }
 
     img {
-      width: 14px;
-      height: 14px;
+      width: 0.9em;
+      height: 0.9em;
+    }
+  }
+
+  &--hover-right {
+
+    &:hover {
+
+      img {
+        transform: translateX(0.4em);
+        
+      }
+    }
+  }
+
+  &--hover-up {
+
+    &:hover {
+
+      img {
+        transform: translate(0.3em, -0.2em);
+      }
     }
   }
 }

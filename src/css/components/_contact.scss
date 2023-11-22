@@ -64,6 +64,8 @@
     border-radius: 2.5em;
     overflow: hidden;
     position: relative;
+    @include mixin.setrem($pc: 1.4rem, $tablet: 1.3rem, $sp: 1.1rem);
+    //rem sizes are set in .contact__form, and input, textarea and button elements;
     @include mq.sp {
       padding: 3em;
     }
@@ -90,7 +92,6 @@
   }
 
   &__label {
-    font-size: 0.9em;
     margin-left: 1em;
 
     &::after {

@@ -1,4 +1,5 @@
 @use 'settings/color' as color;
+@use 'tools/media-queries' as mq;
 
 @mixin center($direction: column, $align: center, $justify: center) {
   display: flex;
@@ -23,4 +24,14 @@
 @mixin gradient($opacity: 1) {
   background: linear-gradient(color.$secondary, color.$primary);
   opacity: $opacity;
+}
+
+@mixin setrem($pc: 16rem, $tablet: 14rem, $sp: 12rem) {
+  font-size: $pc;
+  @include mq.mx1024 {
+    font-size: $tablet;
+  }
+  @include mq.sp {
+    font-size: $sp;
+  }
 }

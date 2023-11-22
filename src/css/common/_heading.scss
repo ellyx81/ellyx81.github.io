@@ -1,24 +1,27 @@
 @use 'settings/color' as color;
 @use 'settings/font-family' as ff;
 @use 'tools/media-queries' as mq;
+@use 'tools/function' as func;
+@use 'tools/mixin' as mixin;
 
 .heading {
-  font: 6rem ff.$krona;
-  @include mq.mx1024 {
-    font-size: 5rem;
-    line-height: 1.5em;
-  }
-  @include mq.sp {
-    font-size: 35px;
-  }
+  font-family: ff.$heading;
+  letter-spacing: 0.03em;
+  line-height: 1em;
+  @include mixin.setrem($pc: 5rem, $tablet: 4rem, $sp: 3.5rem);
 
   &--small {
-    font-size: 4rem;
-    @include mq.mx1024 {
-      font-size: 3.5rem;
-    }
-    @include mq.sp {
-      font-size: 25px;
+    @include mixin.setrem($pc: 4rem, $tablet: 3rem, $sp: 2.5rem);
+  }
+
+  &--large {
+    line-height: func.getem(96, 112.3);
+    color: color.$bright-pink;
+    //text-transform: uppercase;
+    letter-spacing: 0.05em;
+    @include mixin.setrem($pc: 8rem, $tablet: 7.5rem, $sp: 6.5rem);
+    @include mq.sp-sm {
+      font-size: 58px;
     }
   }
 }

@@ -1,9 +1,7 @@
 @use 'settings/color' as color;
 @use 'settings/font-family' as ff;
-@use 'settings/font-weight' as fw;
 @use 'tools/mixin' as mixin;
 @use 'tools/media-queries' as mq;
-@use 'tools/function' as func;
 
 input,
 textarea,
@@ -11,11 +9,12 @@ button {
   color: color.$white;
   border: none;
   background: none;
+  @include mixin.setrem($pc: 1.4rem, $tablet: 1.3rem, $sp: 1.1rem);
 }
 
 input,
 textarea {
-  font: 0.9em ff.$mont;
+  font-family: ff.$text;
   padding: 1em 1.8em;
   border-radius: 25px;
   background-color: color.$dark-pink;

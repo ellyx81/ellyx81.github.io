@@ -2,6 +2,7 @@
 @use 'settings/font-family' as ff;
 @use 'settings/font-weight' as fw;
 @use 'tools/media-queries' as mq;
+@use 'tools/mixin' as mixin;
 
 .works {
   $p: &;
@@ -62,15 +63,13 @@
     overflow: hidden;
     position: relative;
     border-radius: 1.8em;
-    font-size: 1.4rem;
     transition: 0.3s;
+    @include mixin.setrem($pc: 1.4rem, $tablet: 1.2rem, $sp: 1.0rem);
     @include mq.mx1024 {
       padding: 2.8em 5%;
-      font-size: 1.2rem;
     }
     @include mq.sp {
       padding: 2.8em 9%;
-      font-size: 1rem;
     }
 
     &::before {
@@ -97,7 +96,6 @@
 
     &:hover {
       box-shadow: rgb(0 0 0 / 0.25) 25px 25px 25px 0px;
-      transform: scale(1.01);
 
       &::before {
         background-color: rgb(172, 64, 71, 0.15);
@@ -139,17 +137,11 @@
   }
 
   &__name {
-    font: fw.$semibold 1.7em ff.$mont;
+    font: fw.$semibold 1.7em ff.$text;
   }
 
   &__heading {
-    font-size: 1.8rem;
-    @include mq.mx1024 {
-      font-size: 1.6rem;
-    }
-    @include mq.sp {
-      font-size: 1.4rem;
-    }
+    @include mixin.setrem($pc: 1.8rem, $tablet: 1.6rem, $sp: 1.4rem);
   }
 
   &__name,
