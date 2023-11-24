@@ -19,7 +19,7 @@
     color: color.$bright-pink;
     //text-transform: uppercase;
     letter-spacing: 0.05em;
-    @include mixin.setrem($pc: 8rem, $tablet: 7.5rem, $sp: 6.5rem);
+    @include mixin.setrem($pc: 8.5rem, $tablet: 7.5rem, $sp: 6.5rem);
     @include mq.sp-sm {
       font-size: 58px;
     }

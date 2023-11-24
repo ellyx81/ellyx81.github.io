@@ -32,10 +32,7 @@
   }
 
   &:first-child {
-    padding-top: 150px;
-    @include mq.sp {
-      padding-top: 100px;
-    }
+    padding-top: 50px;
   }
 
   &__content {
