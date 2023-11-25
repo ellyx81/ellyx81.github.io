@@ -6,19 +6,20 @@
 .footer {
   $p: &;
   padding: 50px 0;
-  border-top: 1px solid color.$gray;
+  box-shadow: 0 -0.5px 0 0 color.$gray;
+  @include mixin.setrem($pc: 1.6rem, $tablet: 1.4rem, $sp: 1.2rem);
   @include mq.mx1024 {
     padding: 40px 0;
   }
+  @include mq.sp {
+    padding: 30px 0;
+  }
 
   &__contents {
-    font-size: 2rem;
+    font-size: 1em;
     width: 100%;
     display: flex;
     @include mixin.max-width;
-    @include mq.tablet {
-      font-size: 15px;
-    }
     @include mq.sp {
       flex-direction: column-reverse;
     }
@@ -29,16 +30,13 @@
     display: flex;
     flex-direction: column;
     @include mq.sp {
-      margin-top: 50px;
+      margin-top: 30px;
       width: 100%;
     }
   }
 
   &__logo {
-    height: 75px;
-    @include mq.tablet {
-      height: 55px;
-    }
+    height: 3em;
 
     img {
       height: 100%;
@@ -48,27 +46,15 @@
   &__text {
     font-weight: fw.$medium;
     opacity: 0.5;
-    margin-top: 40px;
-    @include mq.tablet {
-      margin-top: 30px;
-    }
-    @include mq.sp {
-      font-size: 16px;
-    }
+    margin-top: 2.5em;
   }
 
   &__copyright {
-    font-size: 1.4rem;
+    font-size: 0.9em;
     opacity: 0.4;
-    margin-top: 80px;
-    @include mq.mx1024 {
-      font-size: 13px;
-    }
-    @include mq.tablet {
-      margin-top: 60px;
-    }
+    margin-top: 4.5em;
     @include mq.sp {
-      margin-top: 50px;
+      margin-top: 30px;
     }
   }
 
@@ -78,7 +64,7 @@
     @include mq.sp {
       width: 100%;
       flex-direction: column;
-      gap: 30px;
+      gap: 1em;
     }
   }
 
@@ -89,15 +75,34 @@
       display: block;
     }
 
-    & a {
-      font-size: 1.6rem;
-      opacity: 0.4;
-      margin-bottom: 16px;
-      transition: 0.3s;
-      @include mq.tablet {
-        font-size: 13px;
-        margin-bottom: 12px;
+    &:nth-child(2) {
+      
+      a {
+
+        &:after {
+          content: '';
+          display: inline-block;
+          width: 0.75em;
+          height: 0.75em;
+          transform: translateX(0.8em);
+          transition: 0.3s;
+          background: url("../img/icons/outside.svg") no-repeat center/100% 100%;
+        }
+
+        &:hover {
+
+          &:after {
+            transform: translate(0.9em, -0.1em);
+          }
+        }
       }
+    }
+
+    & a {
+      font-size: 1em;
+      opacity: 0.5;
+      margin-bottom: 1em;
+      transition: 0.3s;
 
       &:hover {
         opacity: 1;
@@ -107,9 +112,38 @@
 
   &__link-title {
     font-weight: fw.$bold;
-    margin-bottom: 28px;
-    @include mq.tablet {
-      margin-bottom: 25px;
+    margin-bottom: 1.6em;
+  }
+
+  &__to-top-btn {
+    position: fixed;
+    transform: translateY(110%);
+    bottom: 0;
+    right: 1.8em;
+    width: 3.5em;
+    height: 4.5em;
+    transition: transform 1s cubic-bezier(.075,.82,.165,1);
+    z-index: 500;
+
+    &::before {
+      content: '';
+      position: absolute;
+      width: 100%;
+      height: 100%;
+      background: url("../img/icons/arrow-to-top.svg") no-repeat center/50% 50%;
+    }
+
+    &::after {
+      content: '';
+      position: absolute;
+      width: 100%;
+      height: 100%;
+      @include mixin.gradient(0.3);
+      z-index: -1;
+    }
+
+    &.show {
+      transform: translateY(-1.8em)
     }
   }
 }

@@ -1,11 +1,11 @@
 import menuToggler from './components/menuToggler'
-import headerScroll from './components/headerScroll'
+import showElements from './components/showElementsOnScroll'
 
 document.addEventListener(
   'DOMContentLoaded',
   () => {
     menuToggler();
-    headerScroll();
+    showElements()
   },
   false
 )
