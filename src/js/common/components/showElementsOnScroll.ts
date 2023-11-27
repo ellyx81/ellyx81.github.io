@@ -8,7 +8,7 @@ const showElements = () => {
   
   window.addEventListener("scroll", () => {
     if (header && btn) {
-      if (window.scrollY > 300) {
+      if (window.scrollY > 200) {
         header.classList.add("show");
         btn.classList.add("show");
       }

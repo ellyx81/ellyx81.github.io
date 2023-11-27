@@ -8,11 +8,11 @@
   justify-content: $justify;
 }
 
-@mixin max-width($max-width: 920px) {
+@mixin max-width($max-width: 980px) {
   max-width: $max-width;
   margin: 0 auto;
   box-sizing: border-box;
-  @media screen and (max-width: 1020px) {
+  @media screen and (max-width: 1080px) {
     max-width: 100%;
     padding: 0 5%;
   }
@@ -26,7 +26,7 @@
   opacity: $opacity;
 }
 
-@mixin setrem($pc: 16rem, $tablet: 14rem, $sp: 12rem) {
+@mixin setrem($pc: 1.8rem, $tablet: 1.4rem, $sp: 1.2rem) {
   font-size: $pc;
   @include mq.mx1024 {
     font-size: $tablet;

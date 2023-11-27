@@ -6,7 +6,7 @@ mixin picture(classname, path, type, alt)
 
 
 mixin worksItem(name, desc, cont, link, linkType, img, device)
-  .works__item
+  .works__item(data-aos="zoom-in-up" data-aos-duration="700" data-aos-offset="200")
     .works__text-wrap
       img.works__logo(src="img/works/"+img+"-logo.png", alt=name+" logo").cover.overflow
       .works__text-grp
@@ -17,19 +17,19 @@ mixin worksItem(name, desc, cont, link, linkType, img, device)
         p.works__text= cont 
       case linkType
         when 'live'
-          a.button.button--small.button--hover-right(href=link)
+          a.button.button--small.button--hover-right(href=link, target="_blank")
             span View Live
             img(src="img/icons/arrow-right.svg", alt="")
         when 'demo'
-          a.button.button--small.button--hover-right(href=link)
+          a.button.button--small.button--hover-right(href=link, target="_blank")
             span View Demo
             img(src="img/icons/arrow-right.svg", alt="")
         when 'video'
-          a.button.button--small.button--hover-right(href=link)
+          a.button.button--small.button--hover-right(href=link, target="_blank")
             span Watch Demo
             img(src="img/icons/arrow-right.svg", alt="")
         default
-          a.button.button--small.button--hover-right(href=link)
+          a.button.button--small.button--hover-right(href=link, target="_blank")
             span View Site
             img(src="img/icons/arrow-right.svg", alt="")
     case device 

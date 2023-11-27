@@ -5,12 +5,34 @@
 
 .banner {
   $p: &;
+  position: relative;
+
+  &::after {
+    content: '';
+    position: absolute;
+    width: 100%;
+    height: 160%;
+    top: -100px;
+    left: 50%;
+    transform: translateX(-50%);
+    background-image: url("../img/background/background.png");
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+    opacity: 0.3;
+    pointer-events: none;
+    @include mixin.max-width(1920px);
+    @include mq.sp {
+      height: 190%;
+      top: -200px;
+    }
+  }
 
   &__content {
     position: relative;
     display: flex;
     align-items: center;
-    gap: 5%;
+    gap: 3%;
   }
 
   &__wrapper {
@@ -18,34 +40,41 @@
     z-index: 5;
     display: flex;
     flex-direction: column;
-    gap: 2em;
     @include mq.mx1024 {
       margin-top: 30px;
     }
     @include mq.sp {
       text-align: center;
       align-items: center;
+      margin-top: -40px;
     }
   }
 
   &__subheading {
     font-size:  1.5em;
     font-weight: fw.$regular;
+    margin-bottom: 1.5em;
     @include mq.mx1024 {
       font-size: 1.25em;
     }
   }
 
+  &__heading {
+    margin-bottom: .3em;
+  }
+
   &__text {
     font-size: 1.1em;
     line-height: 1.5em;
+    margin-bottom: 1.5em;
+    line-height: 1.4em;
   }
 
   &__image-wrapper {
     width: 45%;
     height: 100%;
     position: relative;
-    margin-top: 60px;
+    margin-top: 40px;
     
     &::before {
       content: '';

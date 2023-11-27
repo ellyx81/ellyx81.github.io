@@ -6,38 +6,7 @@
 
   &__content {
     @include mixin.center($direction: 'row');
-
     gap: 10%;
-
-    &::before {
-      display: block;
-      top: -15%;
-      right: 5%;
-      width: 13.75em;
-      height: 13.75em;
-      transform: rotate(-30deg);
-      mask: url('../img/decors/rounded-rectangle-stroke-thin.svg') center / contain no-repeat;
-      @include mq.sp {
-        right: 11%;
-        width: 10em;
-        height: 10em;
-      }
-    }
-
-    &::after {
-      display: block;
-      top: -15%;
-      right: -6.5%;
-      width: 12em;
-      height: 12em;
-      transform: rotate(-30deg);
-      mask: url('../img/decors/square-dots.svg') center / contain no-repeat;
-      @include mq.sp {
-        width: 8em;
-        height: 8em;
-        right: 0;
-      }
-    }
   }
 
   &__image-wrapper {
