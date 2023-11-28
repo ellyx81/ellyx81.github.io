@@ -17,6 +17,9 @@
   &__link-container {
     max-width: 800px;
     margin: 2.5em auto 0;
+    @include mq.mx1024 {
+      max-width: 650px;
+    }
   }
 
   &__form {
@@ -26,7 +29,7 @@
     position: relative;
     @include mixin.setrem($pc: 1.5rem, $tablet: 1.3rem, $sp: 1.1rem);
     //rem sizes are set in .contact__form, and input, textarea and button elements;
-    @include mq.sp {
+    @include mq.mx1024 {
       padding: 3em;
     }
 
