@@ -1,3 +1,6 @@
+@use 'settings/color' as color;
+@use 'tools/media-queries' as mq;
+
 @mixin center($direction: column, $align: center, $justify: center) {
   display: flex;
   flex-direction: $direction;
@@ -5,15 +8,30 @@
   justify-content: $justify;
 }
 
-@mixin max-width($max-width: 1024px) {
+@mixin max-width($max-width: 980px) {
   max-width: $max-width;
   margin: 0 auto;
   box-sizing: border-box;
-  @media screen and (max-width: 1084px) {
+  @media screen and (max-width: 1080px) {
     max-width: 100%;
-    padding: 0 3%;
+    padding: 0 5%;
   }
   @media screen and (max-width: 767px) {
     padding: 0 5%;
+  }
+}
+
+@mixin gradient($opacity: 1) {
+  background: linear-gradient(color.$secondary, color.$primary);
+  opacity: $opacity;
+}
+
+@mixin setrem($pc: 1.8rem, $tablet: 1.4rem, $sp: 1.2rem) {
+  font-size: $pc;
+  @include mq.mx1024 {
+    font-size: $tablet;
+  }
+  @include mq.sp {
+    font-size: $sp;
   }
 }

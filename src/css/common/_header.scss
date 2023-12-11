@@ -6,66 +6,104 @@
 
 .header {
   $p: &;
-  position: fixed;
-  top: 40px;
-  left: 50%;
-  transform: translateX(-50%);
   width: 100%;
-  height: 70px;
+  height: 80px;
+  position: relative;
   z-index: 1000;
-  @include mixin.max-width;
   @include mq.mx1024 {
-    top: 0;
-    left: 0;
-    transform: none;
-    overflow-y: hidden;
+    height: 70px;
   }
 
   &__contents {
     position: relative;
+    top: 0;
     padding: 0 25px;
+    width: 100%;
     height: 100%;
-    border: 1px solid color.$gray-5e5;
-    border-radius: 50px;
-    overflow: hidden;
+    background-color: rgba(17, 17, 17, 0.3);
+    backdrop-filter: blur(40px);
+    box-shadow: 0 0.5px 0 0 color.$gray;
+    @include mixin.setrem($pc: 2.0rem, $tablet: 1.6rem, $sp: 1.6rem);
     @include mixin.center($direction: row, $justify: space-between);
     @include mq.mx1024 {
-      position: fixed;
-      height: unset;
-      width: 100%;
       padding: 0;
-      top: 0;
       left: 0;
-      border: none;
       border-radius: 0;
-      overflow: unset;
     }
 
-    &::before {
-      content: '';
-      position: absolute;
-      left: 0;
-      top: 0;
-      width: 100%;
-      height: 100%;
-      background-color: rgb(24, 24, 29, 0.5);
-      backdrop-filter: blur(20px);
-      border-radius: 50px;
-      z-index: -1;
+    &.active {
+      
+      #{$p}__toggler {
+
+        &::before {
+          transform: translate(-18px, 8.5px) rotate(-38deg);
+        }
+  
+        &::after {
+          transform: translate(-18px, -8.5px) rotate(38deg);
+        }
+  
+        span {
+          opacity: 0;
+        }
+      }
+      
+      #{$p}__switch {
+        visibility: visible;
+        opacity: 0.3;
+      }
+
+      #{$p}__logo {
+        opacity: 0;
+      }
+    }
+
+    &.scroll {
+      height: 60px;
+      position: fixed;
+      transform: translateY(-100%);
+      transition: transform .6s cubic-bezier(.075,.82,.165,1);
       @include mq.mx1024 {
-        display: none;
+        box-shadow: 0 0.5px 0 0 color.$gray;
+      }
+
+      &::before {
+        content: '';
+        position: absolute;
+        left: 0;
+        top: 0;
+        width: 100%;
+        height: 100%;
+        z-index: -1;
+      }
+
+      &.show {
+        transform: translateY(0);
+      }
+
+      #{$p}__toggler,
+      #{$p}__logo {
+        @include  mq.mx1024 {
+          top: 20px;
+        }
+      }
+      #{$p}__switch {
+        @include  mq.mx1024 {
+          top: 13px;
+        }
       }
     }
   }
 
   &__logo {
-    height: 28px;
+    height: 1.35em;
+    transition: 0.3s;
     @include mq.mx1024 {
       position: absolute;
       left: 25px;
-      top: 30px;
+      top: 23px;
       width: auto;
-      z-index: 99999;
+      height: 1.5em;
     }
 
     img {
@@ -78,17 +116,24 @@
     right: 25px;
     top: 33px;
     width: 30px;
-    height: 24px;
+    height: 20px;
     z-index: 99999;
     transition: 0.4s;
+    @include mq.mx1024 {
+      width: 38px;
+      top: 25px;
+    }
+    @include mq.sp {
+      width: 35px;
+    }
 
     &::before,
     &::after {
       content: '';
       position: absolute;
       width: 100%;
-      height: 4px;
-      background-color: color.$gray-5e5;
+      height: 3px;
+      background-color: color.$gray;
       top: 0;
       left: 50%;
       transform: translateX(-50%);
@@ -96,54 +141,33 @@
     }
 
     &::after {
-      top: calc(100% - 4px);
+      top: calc(100% - 3px);
     }
 
     span {
       position: absolute;
       display: block;
       width: 100%;
-      height: 4px;
-      background-color: color.$gray-5e5;
+      height: 3px;
+      background-color: color.$gray;
       left: 50%;
       top: 50%;
       transform: translate(-50%, -50%);
       transition: 0.3s;
     }
-
-    &.active {
-
-      &::before {
-        transform: translate(-18px, 10px) rotate(-45deg);
-      }
-
-      &::after {
-        transform: translate(-18px, -10px) rotate(45deg);
-      }
-
-      span {
-        opacity: 0;
-      }
-      
-      & ~ #{$p}__switch {
-        visibility: visible;
-        opacity: 0.4;
-      }
-    }
   }
   
-
   &__nav {
     display: flex;
-    transition: 0.1s ease-in-out;
+    transition: transform .6s cubic-bezier(.075,.82,.165,1);
     position: relative;
     @include mq.mx1024 {
       position: absolute;
       top: 0;
-      //bottom: 100vh;
-      left: 100%;
+      left: 0;
+      transform: translateY(-100%);
       width: 100%;
-      height: 100svh;
+      height: 100vh;
       @include mixin.center;
 
       &::before {
@@ -151,36 +175,34 @@
         position: absolute;
         left: 0;
         top: 0;
-        //bottom: 100vh;
         width: 100%;
         height: 100%;
-        background-color: color.$black-1a1;
+        background-color: color.$black;
         z-index: -1;
       }
     }
     
     & a {
-      opacity: 0.4;
+      opacity: 1;
       transition: 0.3s;
   
       &:hover {
-        opacity: 1;
+        opacity: 0.5;
       }
     }
 
     &.expand {
-      position: relative;
-      //bottom: 0;
-      left: 0;
+      position: fixed;
+      transform: translateY(0);
     }
   }
 
   &__anchor-list {
     display: flex;
-    gap: 50px;
+    gap: 2.5em;
     justify-content: space-between;
     align-items: center;
-    margin-right: 60px;
+    margin-right: 3em;
     @include mq.mx1024 {
       flex-direction: column;
       align-items: unset;
@@ -192,34 +214,34 @@
   }
 
   &__anchor {
-    font-size: 1.6rem;
+    font-size: 1em;
     color: color.$white;
     @include mq.mx1024 {
-      font-size: 23px;
-      height: 100px;
-      border-bottom: 1px solid color.$gray-5e5;
+      font-size: 1.1em;
+      height: 5em;
+      border-bottom: 0.5px solid color.$gray;
       @include mixin.center;
     }
   }
 
   &__socials {
     display: flex;
-    gap: 20px;
+    align-items: center;
+    gap: 1.25em;
     @include mq.mx1024 {
       height: 100px;
-      align-items: center;
-      gap: 60px;
+      gap: 2.5em;
     }
   }
 
   &__icon {
     display: inline-block;
-    width: 22px;
-    height: 22px;
+    width: 1.1em;
+    height: 1.1em;
     background: url("../img/icons/linkedin.svg") no-repeat center/100% 100%;
     @include mq.mx1024 {
-      width: 30px;
-      height: 30px;
+      width: 1.7em;
+      height: 1.7em;
     }
     
     &:nth-child(2) {
@@ -228,10 +250,10 @@
   }
 
   &__switch {
-    margin-left: 25px;
-    padding-left: 25px;
+    margin-left: 1.25em;
+    padding-left: 1.25em;
     position: relative;
-    border-left: 1px solid color.$gray-5e5;
+    border-left: 1px solid color.$gray;
     @include mq.mx1024 {
       visibility: hidden;
       opacity: 0;
@@ -239,12 +261,13 @@
       padding: 0;
       border: 0;
       position: absolute;
-      top: 30px;
+      top: 18px;
       right: 80px;
       transition: 0.3s;
     }
 
     a {
+      margin-top: 4px;
       background: url("../img/icons/sun.svg") no-repeat center/100% 100%;
     }
   }
