@@ -9,5 +9,5 @@
 }
 
 @function getem($base-size, $illust-lheight) {
-  @return ($illust-lheight / $base-size) * 1em;
+  @return calc($illust-lheight / $base-size) * 1em;
 }

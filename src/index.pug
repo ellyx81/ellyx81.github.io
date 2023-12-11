@@ -1,5 +1,136 @@
 extends includes/layout.pug
+include includes/mixins.pug
 block content
-  | 
+  section.section.banner#top
+    .banner__content.section__content
+      .banner__wrapper
+        h2.banner__subheading FRONT-END DEVELOPER
+        h1.banner__heading.heading.heading--large Giselle Santos
+        p.banner__text.gray A front-end developer from Naic, Cavite. I specialize in crafting responsive websites and landing pages for businesses.
+        a.button(href="")
+          span Contact Me
+          img(src="img/icons/message.svg", alt="")
+      .banner__image-wrapper.pc
+        +picture("banner__image", "/banner/banner-img", "png", "3d art of a girl").contain
+
+  section.section.about-me#about-me
+    .about-me__content.section__content 
+      .about-me__image-wrapper.pc
+        +picture("about-me__image", "/about-me/about-me-img", "png", "3d art of a girl working on a laptop").cover
+      .about-me__wrapper(data-aos="fade-left" data-aos-duration="1000" data-aos-offset="150")
+        .section__heading
+          h2.heading About Me
+        p.about-me__text.gray I like transforming ideas into engaging, user-friendly interfaces. I specialize in WordPress, where I create seamless digital experiences. I'm always eager in learning to expand my skills and keep up with the ever changing web development industry.
+        a.button.button--icon-left.button--secondary(href="download/Giselle_Santos_Resume_FE.pdf" download="Giselle_Santos_Resume")
+          span Download my CV
+          img(src="img/icons/download.svg", alt="")
+
+  section.section.tech-stack#tech-stack
+    .tech-stack__content.section__content
+      .section__heading
+        h2.heading.heading--small My Tech Stack
+      .tech-stack__container
+        - 
+          const tech = [
+            ["HTML5", "https://developer.mozilla.org/en-US/docs/Web/HTML" ],
+            ["CSS3", "https://developer.mozilla.org/en-US/docs/Web/CSS" ],
+            ["JavaScript", "https://developer.mozilla.org/en-US/docs/Web/JavaScript" ],
+            ["TypeScript", "https://www.typescriptlang.org/" ],
+            ["PHP", "https://www.php.net/" ],
+            ["JQuery", "https://api.jquery.com/" ],
+            ["Git", "https://git-scm.com/" ],
+            ["WordPress", "https://wordpress.org/" ],
+            ["PugJS", "https://pugjs.org/" ],
+            ["Sass", "https://sass-lang.com/" ],
+            ["Bootstrap", "https://getbootstrap.com/" ],
+            ["React-Native", "https://reactnative.dev/" ],
+            ["NodeJS", "https://nodejs.org/en" ],
+            ["MySQL", "https://www.mysql.com/" ],
+            ["Java", "https://www.java.com/en/" ] 
+        - ]
+          each item in tech
+            a.tech-stack__item(href=item[1], target="_blank", data-aos="fade-up" data-aos-duration="1000" data-aos-offset="200")
+              img(src=`img/tech-stack/${item[0]}.svg`, alt=item[0]).contain
+
+  section.section.works#works
+    .works__content.section__content
+      .section__heading
+        h2.heading.center My Works
+      .works__container
+        +worksItem(
+          'My Home', 
+          'A website for a real-estate company My Home Co., Ltd., based in Inage Ward, Chiba City, Japan.', 
+          'Frontend Engineer - contributed in coding pages and parts, and implemented post type WordPress functionality.', 
+          'https://www.myhome-co.com/', 
+          'live', 
+          'my-home', 
+          'pc')
+        +worksItem(
+          'Toolbox', 
+          'A website for a jewelry case manufacturing company Toolbox Co., Ltd., based in Taito-ku, Tokyo, Japan.', 
+          'Frontend Engineer - participated in coding some pages, and conducted code reviews for team members.', 
+          'https://toolbox1.co.jp/shop/', 
+          'live', 
+          'toolbox', 
+          'pc')
+        +worksItem(
+          'Yeeell - Churu Channel', 
+          'A landing page for a YouTube content creator Churu, under management production company YEEELL.', 
+          'Frontend Engineer - Coded whole page, including contact form.', 
+          'https://toolbox1.co.jp/shop/', 
+          'demo', 
+          'yeeell', 
+          'tablet')
+        +worksItem(
+          'Coolex', 
+          'A website for a cooling clothing product Coolex, under Kamakura Seisakusho Co., Ltd. manufacturing company.', 
+          'Frontend Engineer - Coded whole page, including contact form.', 
+          'https://toolbox1.co.jp/shop/', 
+          'demo', 
+          'coolex', 
+          'tablet')
+        +worksItem(
+          'Nethix', 
+          'An educational mobile application aimed to teach about computer and internet ethics.', 
+          'Sole front-end/backend developer and designer.', 
+          'https://youtu.be/3JPUh-Nk-NQ?si=OgSFrPIXZ2yxmvP6', 
+          'video', 
+          'nethix', 
+          'phone')
+
+  section.section.contact#contact
+    .contact__content.section__content
+      .section__heading
+        h2.heading.center Let's work together!
+      span.contact__text.gray Want to discuss an opportunity to create something great? I’m ready when you are.
+      form(action="" name="contact-form" data-aos="fade-up" data-aos-duration="1000" data-aos-offset="300").contact__form
+        .contact__input-wrap 
+          label.contact__label Email
+          input(type="email" placeholder="Enter your email" required).contact__input
+        .contact__input-wrap
+          label.contact__label Name
+          input(type="text" placeholder="Enter your name" required).contact__input
+        .contact__input-wrap
+          label.contact__label Subject
+          input(type="text" placeholder="Enter e-mail subject" required).contact__input
+        .contact__input-wrap
+          label.contact__label.contact__label--norequire Message:
+          textarea(placeholder="Write your message..." rows="15").contact__input
+        button.button.button--hover-up.contact__button(href="")
+          span Send message
+          img(src="img/icons/plane.svg", alt="")
+      span.contact__text Or you can contact me directly... :)
+      .contact__link-container
+        a(href="mailto: santosgiselle801@gmail.com").contact__link
+          img(src="img/icons/message.svg", alt="")
+        a(href="tel:09764414177").contact__link
+          img(src="img/icons/phone.svg", alt="")
+        a(href="https://www.linkedin.com/in/giselle-santos-0017a7298/").contact__link
+          img(src="img/icons/linkedin.svg", alt="")
+        a(href="https://www.facebook.com/Ellyx08/").contact__link
+          img(src="img/icons/facebook.svg", alt="")
+        a(href="https://github.com/ellyx81").contact__link
+          img(src="img/icons/github.svg", alt="")
+
 block script
   script(src="js/top/index.ts")
