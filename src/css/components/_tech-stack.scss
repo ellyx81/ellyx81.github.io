@@ -1,0 +1,37 @@
+@use 'tools/media-queries' as mq;
+
+.tech-stack {
+  
+  &__container {
+    display: grid;
+    width: 75%;
+    margin: 50px auto 0;
+    grid-template-columns: repeat(5, 9%);
+    justify-content: space-between;
+    gap: 40px;
+    @include mq.mx1024 {
+      margin: 40px auto 0;
+      gap: 30px;
+    }
+    @include mq.sp {
+      margin: 30px auto 0;
+      gap: 20px;
+      width: 80%;
+    }
+    @include mq.sp-m {
+      grid-template-columns: repeat(3, 18%);
+      max-width: 250px;
+    }
+  }
+
+  &__item {
+    width: 100%;
+    height: auto;
+    position: relative;
+    transition: 0.3s;
+
+    &:hover {
+      transform: translateY(-10px);
+    }
+  }
+}

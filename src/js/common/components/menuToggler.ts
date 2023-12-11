@@ -2,21 +2,36 @@
  * Toggle menu in mobile view
  */
 const menuToggler = () => {
-  const toggler = document.querySelector('.js-toggler');
-  const nav = document.querySelector('.js-nav');
-  const anchors = document.querySelectorAll('.header__anchor');
+  const headers = document.querySelectorAll('.header__contents');
+  const body = document.body;
   const windowWidth = window.innerWidth;
 
-  if (windowWidth < 1025 && toggler && nav && anchors) {
 
-    toggler?.addEventListener('click', () => {
-      toggler?.classList.toggle('active');
-      nav?.classList.toggle('expand');
+  if (windowWidth < 1025 && headers) {
 
-      anchors.forEach(anchor => {
-        anchor.addEventListener('click', function() {
-          toggler.classList.remove('active');
-          nav.classList.remove('expand');
+    headers.forEach(header => {
+      const toggler = header.querySelector('.js-toggler');
+      const anchors = header.querySelectorAll('.header__anchor');
+      const nav = header.querySelector('.js-nav') as any;
+      const updateBodyOverflow = () => {
+        if (nav && (nav.classList.contains('expand'))) {
+          body.style.overflow = 'hidden';
+        } else {
+          body.style.overflow = 'auto';
+        }
+      };
+
+      toggler?.addEventListener('click', () => {
+        header?.classList.toggle('active');
+        nav?.classList.toggle('expand');
+        updateBodyOverflow();
+
+        anchors.forEach(anchor => {
+          anchor.addEventListener('click', function() {
+            header.classList.remove('active');
+            nav.classList.remove('expand');
+            updateBodyOverflow();
+          })
         })
       })
       
