@@ -1,0 +1,27 @@
+@use 'settings/color' as color;
+@use 'settings/font-family' as ff;
+@use 'tools/media-queries' as mq;
+@use 'tools/function' as func;
+@use 'tools/mixin' as mixin;
+
+.heading {
+  font-family: ff.$heading;
+  letter-spacing: 0.03em;
+  line-height: 1em;
+  @include mixin.setrem($pc: 5.2rem, $tablet: 4rem, $sp: 3.5rem);
+
+  &--small {
+    @include mixin.setrem($pc: 4.2rem, $tablet: 3rem, $sp: 2.5rem);
+  }
+
+  &--large {
+    color: color.$bright-pink;
+    //text-transform: uppercase;
+    letter-spacing: 0.05em;
+    line-height: 1.1em;
+    @include mixin.setrem($pc: 9rem, $tablet: 7.5rem, $sp: 6.5rem);
+    @include mq.sp-sm {
+      font-size: 58px;
+    }
+  }
+}
