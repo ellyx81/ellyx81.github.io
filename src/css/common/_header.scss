@@ -1,0 +1,274 @@
+@use 'settings/color' as color;
+@use 'settings/font-weight' as fw;
+@use 'settings/font-family' as ff;
+@use 'tools/mixin' as mixin;
+@use 'tools/media-queries' as mq;
+
+.header {
+  $p: &;
+  width: 100%;
+  height: 80px;
+  position: relative;
+  z-index: 1000;
+  @include mq.mx1024 {
+    height: 70px;
+  }
+
+  &__contents {
+    position: relative;
+    top: 0;
+    padding: 0 25px;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(17, 17, 17, 0.3);
+    backdrop-filter: blur(40px);
+    box-shadow: 0 0.5px 0 0 color.$gray;
+    @include mixin.setrem($pc: 2.0rem, $tablet: 1.6rem, $sp: 1.6rem);
+    @include mixin.center($direction: row, $justify: space-between);
+    @include mq.mx1024 {
+      padding: 0;
+      left: 0;
+      border-radius: 0;
+    }
+
+    &.active {
+      
+      #{$p}__toggler {
+
+        &::before {
+          transform: translate(-18px, 8.5px) rotate(-38deg);
+        }
+  
+        &::after {
+          transform: translate(-18px, -8.5px) rotate(38deg);
+        }
+  
+        span {
+          opacity: 0;
+        }
+      }
+      
+      #{$p}__switch {
+        visibility: visible;
+        opacity: 0.3;
+      }
+
+      #{$p}__logo {
+        opacity: 0;
+      }
+    }
+
+    &.scroll {
+      height: 60px;
+      position: fixed;
+      transform: translateY(-100%);
+      transition: transform .6s cubic-bezier(.075,.82,.165,1);
+      @include mq.mx1024 {
+        box-shadow: 0 0.5px 0 0 color.$gray;
+      }
+
+      &::before {
+        content: '';
+        position: absolute;
+        left: 0;
+        top: 0;
+        width: 100%;
+        height: 100%;
+        z-index: -1;
+      }
+
+      &.show {
+        transform: translateY(0);
+      }
+
+      #{$p}__toggler,
+      #{$p}__logo {
+        @include  mq.mx1024 {
+          top: 20px;
+        }
+      }
+      #{$p}__switch {
+        @include  mq.mx1024 {
+          top: 13px;
+        }
+      }
+    }
+  }
+
+  &__logo {
+    height: 1.35em;
+    transition: 0.3s;
+    @include mq.mx1024 {
+      position: absolute;
+      left: 25px;
+      top: 23px;
+      width: auto;
+      height: 1.5em;
+    }
+
+    img {
+      height: 100%;
+    }
+  }
+
+  &__toggler {
+    position: absolute;
+    right: 25px;
+    top: 33px;
+    width: 30px;
+    height: 20px;
+    z-index: 99999;
+    transition: 0.4s;
+    @include mq.mx1024 {
+      width: 38px;
+      top: 25px;
+    }
+    @include mq.sp {
+      width: 35px;
+    }
+
+    &::before,
+    &::after {
+      content: '';
+      position: absolute;
+      width: 100%;
+      height: 3px;
+      background-color: color.$gray;
+      top: 0;
+      left: 50%;
+      transform: translateX(-50%);
+      transition: top 0.3s 0.3s, transform 0.3s;
+    }
+
+    &::after {
+      top: calc(100% - 3px);
+    }
+
+    span {
+      position: absolute;
+      display: block;
+      width: 100%;
+      height: 3px;
+      background-color: color.$gray;
+      left: 50%;
+      top: 50%;
+      transform: translate(-50%, -50%);
+      transition: 0.3s;
+    }
+  }
+  
+  &__nav {
+    display: flex;
+    transition: transform .6s cubic-bezier(.075,.82,.165,1);
+    position: relative;
+    @include mq.mx1024 {
+      position: absolute;
+      top: 0;
+      left: 0;
+      transform: translateY(-100%);
+      width: 100%;
+      height: 100vh;
+      @include mixin.center;
+
+      &::before {
+        content: '';
+        position: absolute;
+        left: 0;
+        top: 0;
+        width: 100%;
+        height: 100%;
+        background-color: color.$black;
+        z-index: -1;
+      }
+    }
+    
+    & a {
+      opacity: 1;
+      transition: 0.3s;
+  
+      &:hover {
+        opacity: 0.5;
+      }
+    }
+
+    &.expand {
+      position: fixed;
+      transform: translateY(0);
+    }
+  }
+
+  &__anchor-list {
+    display: flex;
+    gap: 2.5em;
+    justify-content: space-between;
+    align-items: center;
+    margin-right: 3em;
+    @include mq.mx1024 {
+      flex-direction: column;
+      align-items: unset;
+      width: 100%;
+      margin: 0;
+      padding: 0 25px;
+      gap: 0;
+    }
+  }
+
+  &__anchor {
+    font-size: 1em;
+    color: color.$white;
+    @include mq.mx1024 {
+      font-size: 1.1em;
+      height: 5em;
+      border-bottom: 0.5px solid color.$gray;
+      @include mixin.center;
+    }
+  }
+
+  &__socials {
+    display: flex;
+    align-items: center;
+    gap: 1.25em;
+    @include mq.mx1024 {
+      height: 100px;
+      gap: 2.5em;
+    }
+  }
+
+  &__icon {
+    display: inline-block;
+    width: 1.1em;
+    height: 1.1em;
+    background: url("../img/icons/linkedin.svg") no-repeat center/100% 100%;
+    @include mq.mx1024 {
+      width: 1.7em;
+      height: 1.7em;
+    }
+    
+    &:nth-child(2) {
+      background: url("../img/icons/github.svg") no-repeat center/100% 100%;
+    }
+  }
+
+  &__switch {
+    margin-left: 1.25em;
+    padding-left: 1.25em;
+    position: relative;
+    border-left: 1px solid color.$gray;
+    @include mq.mx1024 {
+      visibility: hidden;
+      opacity: 0;
+      margin: 0;
+      padding: 0;
+      border: 0;
+      position: absolute;
+      top: 18px;
+      right: 80px;
+      transition: 0.3s;
+    }
+
+    a {
+      margin-top: 4px;
+      background: url("../img/icons/sun.svg") no-repeat center/100% 100%;
+    }
+  }
+}

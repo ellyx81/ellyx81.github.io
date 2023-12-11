@@ -1,9 +1,13 @@
-import test from './components/test'
+import initAOS from './components/initAOS';
+import menuToggler from './components/menuToggler'
+import showElements from './components/showElementsOnScroll'
 
 document.addEventListener(
   'DOMContentLoaded',
   () => {
-    test()
+    menuToggler();
+    showElements();
+    initAOS();
   },
   false
 )
