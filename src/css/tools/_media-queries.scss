@@ -24,6 +24,12 @@
   }
 }
 
+@mixin mx1024 {
+  @media screen and (max-width: 1024px) {
+    @content;
+  }
+}
+
 @mixin mx980 {
   @media screen and (max-width: 980px) {
     @content;
@@ -32,6 +38,24 @@
 
 @mixin sp {
   @media screen and (max-width: 767px) {
+    @content;
+  }
+}
+
+@mixin tablet {
+  @media screen and (max-width: 1024px) and (min-width: 768px) {
+    @content;
+  }
+}
+
+@mixin sp-m {
+  @media screen and (max-width: 520px) {
+    @content;
+  }
+}
+
+@mixin sp-sm {
+  @media screen and (max-width: 390px) {
     @content;
   }
 }

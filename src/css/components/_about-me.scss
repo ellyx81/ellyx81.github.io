@@ -1,0 +1,68 @@
+@use 'settings/color' as color;
+@use 'tools/mixin' as mixin;
+@use 'tools/media-queries' as mq;
+
+.about-me {
+
+  &__content {
+    @include mixin.center($direction: 'row');
+    gap: 10%;
+  }
+
+  &__image-wrapper {
+    width: 35%;
+    position: relative;
+    pointer-events: none;
+
+    &::after {
+      content: '';
+      position: absolute;
+      height: 30%;
+      top: 50%;
+      left: -10%;
+      box-shadow: 90px -70px 200px 140px color.$blue;
+      opacity: 0.1;
+      z-index: -2;
+    }
+  }
+
+  &__wrapper {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    gap: 35px;
+    @include mq.mx1024 {
+      gap: 25px;
+    }
+    @include mq.sp {
+      gap: 15px;
+      align-items: center;
+      text-align: center;
+    }
+  }
+
+  &__image {
+    display: block;
+    width: 100%;
+    aspect-ratio: 1;
+    border-radius: 50%;
+    overflow: hidden;
+    position: relative;
+
+    &::before {
+      content: '';
+      position: absolute;
+      left: 0;
+      top: 0;
+      width: 100%;
+      height: 100%;
+      z-index: -1;
+      @include mixin.gradient($opacity: 0.2);
+    }
+
+    img {
+      object-position: -50px 50px;
+      width: 125%;
+    }
+  }
+}
