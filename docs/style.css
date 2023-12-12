@@ -171,10 +171,21 @@ textarea {
     border-radius: 20px;
   }
 }
-input:focus,
-textarea:focus {
+input:focus, input:focus-visible,
+textarea:focus,
+textarea:focus-visible {
   outline: 1px solid #AC4047;
   outline-offset: -1px;
+}
+
+input::-webkit-outer-spin-button, input::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+input[type=number] {
+  -webkit-appearance: textfield;
+     -moz-appearance: textfield;
+          appearance: textfield;
 }
 
 textarea {
