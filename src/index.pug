@@ -7,7 +7,7 @@ block content
         h2.banner__subheading FRONT-END DEVELOPER
         h1.banner__heading.heading.heading--large Giselle Santos
         p.banner__text.gray A front-end developer from Naic, Cavite. I specialize in crafting responsive websites and landing pages for businesses.
-        a.button(href="")
+        a.button(href="#contact")
           span Contact Me
           img(src="img/icons/message.svg", alt="")
       .banner__image-wrapper.pc
@@ -111,33 +111,33 @@ block content
       .section__heading
         h2.heading.center Let's work together!
       span.contact__text.gray Want to discuss an opportunity to create something great? I’m ready when you are.
-      form(action="" name="contact-form" data-aos="fade-up" data-aos-duration="1000" data-aos-offset="300").contact__form
+      form(method="POST" action="https://formspree.io/f/mbjvnbdr" data-aos="fade-up" data-aos-duration="1000" data-aos-offset="300").contact__form
         .contact__input-wrap 
           label.contact__label Email
-          input(type="email" placeholder="Enter your email" required).contact__input
+          input(type="email" name="email" placeholder="Enter your email" required).contact__input
         .contact__input-wrap
           label.contact__label Name
-          input(type="text" placeholder="Enter your name" required).contact__input
+          input(type="text" name="name" placeholder="Enter your name" required).contact__input
         .contact__input-wrap
-          label.contact__label Subject
-          input(type="text" placeholder="Enter e-mail subject" required).contact__input
+          label.contact__label.contact__label--norequire Phone
+          input(type="number" name="phone" placeholder="Enter phone number").contact__input
         .contact__input-wrap
-          label.contact__label.contact__label--norequire Message:
-          textarea(placeholder="Write your message..." rows="15").contact__input
-        button.button.button--hover-up.contact__button(href="")
+          label.contact__label Message
+          textarea(name="message" placeholder="Write your message..." rows="15" required).contact__input
+        button.button.button--hover-up.contact__button(type="submit")
           span Send message
           img(src="img/icons/plane.svg", alt="")
       span.contact__text Or you can contact me directly... :)
       .contact__link-container
-        a(href="mailto: santosgiselle801@gmail.com").contact__link
+        a(href="mailto: santosgiselle801@gmail.com" target="_blank").contact__link
           img(src="img/icons/message.svg", alt="")
-        a(href="tel:09764414177").contact__link
+        a(href="tel:09764414177" target="_blank").contact__link
           img(src="img/icons/phone.svg", alt="")
-        a(href="https://www.linkedin.com/in/giselle-santos-0017a7298/").contact__link
+        a(href="https://www.linkedin.com/in/giselle-santos-0017a7298/" target="_blank").contact__link
           img(src="img/icons/linkedin.svg", alt="")
-        a(href="https://www.facebook.com/Ellyx08/").contact__link
+        a(href="https://www.facebook.com/Ellyx08/" target="_blank").contact__link
           img(src="img/icons/facebook.svg", alt="")
-        a(href="https://github.com/ellyx81").contact__link
+        a(href="https://github.com/ellyx81" target="_blank").contact__link
           img(src="img/icons/github.svg", alt="")
 
 block script
