@@ -7,6 +7,10 @@ const initAOS = () => {
   
   AOS.init({
     startEvent: 'DOMContentLoaded',
+    disable: function() {
+      var maxWidth = 768;
+      return window.innerWidth < maxWidth;
+    }
   });
 }
 
