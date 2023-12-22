@@ -15,7 +15,7 @@
   }
 
   &--large {
-    color: color.$bright-pink;
+    color: var(--color-primary-heading);
     //text-transform: uppercase;
     letter-spacing: 0.05em;
     line-height: 1.1em;

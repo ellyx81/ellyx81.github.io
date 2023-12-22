@@ -1,11 +1,28 @@
-$primary: #AC4047;
-$secondary: #E0864C;
-
+//for dark mode
 $black: #161616;
 $gray: #5E5E5E;
-$text: #808080;
+$text: #9e9e9e;
 $white: #ffffff;
+$black-transparent: #11111183;
+$white-transparent: #ffffff17;
+$gradient-bg: linear-gradient(to right, #2c2229, #22232e);
 
-$bright-pink: #D35D66;
-$dark-pink: #2D2628;
-$blue: #4A4FC8;
+//for light mode
+$black-light: #3a3a3a;
+$gray-light: #a7a5a5;
+$text-light: #4c4b4b;
+$white-light: #ebebeb;
+$black-transparent-light: #ffffff83;
+$white-transparent-light: #00000017;
+$gray-transparent: #a19f9f83;
+$gradient-bg-light: linear-gradient(to right, #f5e2e7, #e7e9f3);
+$gradient-bg-dark: linear-gradient(to right, #f8b7cb, #bfc3f8);
+
+//both
+$primary: #cc6868;
+$secondary: #7c4b83;
+$blue: #a1a4f8;
+$orange: #ff9e0d;
+$yellow: #f7e75f;
+$secondary-transparent: #8b50912a;
+$gradient: linear-gradient(var(--color-secondary), var(--color-secondary), var(--color-primary));

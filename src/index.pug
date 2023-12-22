@@ -4,8 +4,11 @@ block content
   section.section.banner#top
     .banner__content.section__content
       .banner__wrapper
-        h2.banner__subheading FRONT-END DEVELOPER
-        h1.banner__heading.heading.heading--large Giselle Santos
+        h2.banner__subheading.gray HELLO, I'M
+        h1.banner__heading.heading.heading--large 
+          | Giselle 
+          br.tablet 
+          | Santos
         p.banner__text.gray A front-end developer from Naic, Cavite. I specialize in crafting responsive websites and landing pages for businesses.
         a.button(href="#contact")
           span Contact Me
@@ -49,7 +52,7 @@ block content
             ["Java", "https://www.java.com/en/" ] 
         - ]
           each item in tech
-            a.tech-stack__item(href=item[1], target="_blank", data-aos="fade-up" data-aos-duration="1000" data-aos-offset="200")
+            a.tech-stack__item(href=item[1], target="_blank", data-aos="fade-up" data-aos-duration="500" data-aos-offset="300")
               img(src=`img/tech-stack/${item[0]}.svg`, alt=item[0]).contain
 
   section.section.works#works
@@ -111,7 +114,7 @@ block content
       .section__heading
         h2.heading.center Let's work together!
       span.contact__text.gray Want to discuss an opportunity to create something great? I’m ready when you are.
-      form(method="POST" action="https://formspree.io/f/mbjvnbdr" data-aos="fade-up" data-aos-duration="1000" data-aos-offset="300").contact__form
+      form(method="POST" action="https://formspree.io/f/mbjvnbdr").contact__form
         .contact__input-wrap 
           label.contact__label Email
           input(type="email" name="email" placeholder="Enter your email" required).contact__input

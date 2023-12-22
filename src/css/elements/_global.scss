@@ -2,10 +2,24 @@
 @use 'settings/font-family' as font-family;
 @use 'tools/media-queries' as media-queries;
 
+:root {
+  --color-page-background: #{color.$gradient-bg};
+  --color-page-background-dark: #{color.$black};
+  --color-text: #{color.$text};
+  --color-heading: #{color.$white};
+  --color-primary-heading: #{color.$primary};
+  --color-primary: #{color.$primary};
+  --color-secondary: #{color.$secondary};
+  --color-gray: #{color.$gray};
+  --color-icon: #{color.$white};
+  --color-input: #{color.$white-transparent};
+  --color-shadow: #{color.$black-transparent};
+  --color-gradient: #{color.$gradient};
+  --color-card-secondary: #{color.$secondary-transparent};
+}
+
 html {
-  background-color: color.$black;
   font-family: font-family.$text;
-  color: color.$white;
   font-size: 10px;
   scroll-behavior: smooth;
   @include media-queries.sp {
