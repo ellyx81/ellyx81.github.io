@@ -10,13 +10,14 @@
   border-radius: 50px;
   width: fit-content;
   gap: 0.8em;
-  background-image: linear-gradient(to right, color.$secondary, color.$primary, color.$primary);
-  background-size: 200% 100%;
+  // background-image: var(--color-btn);
+  // background-size: 200% 100%;
   transition: all .2s ease-in-out;
+  background-color: var(--color-primary);
   @include mixin.center($direction: row);
 
   &:hover {
-    background-position: 100% 0;
+    // background-position: 100% 0;
     box-shadow: 0 3px 20px 4px rgb(172, 64, 71, 0.3);
 
     & span,
@@ -33,6 +34,7 @@
   span {
     font: fw.$semibold 1.2em ff.$text;
    // letter-spacing: 0.08em;
+    color: color.$white;
     text-transform: uppercase;
   }
 
@@ -48,18 +50,24 @@
   }
 
   &--secondary {
-    outline: 2px solid color.$primary;
+    outline: 2px solid var(--color-secondary);
     outline-offset: -1px;
     border-radius: 0;
     padding: 0 3em;
     height: 3.4em;
-    background: linear-gradient(to right, color.$primary 50%, transparent 50%);
-    background-size: 200% 100%;
-    background-position: bottom right;
-    transition: 0.3s;
+    background: var(--color-secondary);
+    // background: linear-gradient(to right, var(--color-primary) 50%, transparent 50%);
+    // background-size: 200% 100%;
+    // background-position: bottom right;
+    //transition: 0.3s;
+
+    // &:hover {
+    //   background-position: bottom left;
+    // }
 
     &:hover {
-      background-position: bottom left;
+      // background-position: 100% 0;
+      box-shadow: 0 3px 20px 4px rgba(100, 48, 150, 0.3);
     }
     
     span {

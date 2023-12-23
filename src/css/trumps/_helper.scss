@@ -6,7 +6,7 @@
 }
 
 .gray {
-  color: color.$text;
+  color: var(--color-text);
 }
 
 .overflow {
