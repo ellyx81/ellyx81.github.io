@@ -52,7 +52,7 @@ block content
             ["Java", "https://www.java.com/en/" ] 
         - ]
           each item in tech
-            a.tech-stack__item(href=item[1], target="_blank", data-aos="fade-up" data-aos-duration="500" data-aos-offset="300")
+            a.tech-stack__item(href=item[1], target="_blank", data-aos="fade-up" data-aos-duration="700" data-aos-offset="180")
               img(src=`img/tech-stack/${item[0]}.svg`, alt=item[0]).contain
 
   section.section.works#works
@@ -75,6 +75,14 @@ block content
           'https://toolbox1.co.jp/shop/', 
           'live', 
           'toolbox', 
+          'pc')
+        +worksItem(
+          'Azaburyudocho', 
+          'A Landing page for a restaurant Azaburyudocho, based in Roponggi, Tokyo, Japan.', 
+          'Frontend Engineer - became part of a two-man front-end team that crafted the whole page.', 
+          'https://azabu-ryudocho.com/', 
+          'live', 
+          'azaburyudocho', 
           'pc')
         +worksItem(
           'Yeeell - Churu Channel', 
