@@ -188,6 +188,27 @@ var menuToggler = function menuToggler() {
   ;
 };
 exports.default = menuToggler;
+},{}],"js/common/components/modeSwitch.ts":[function(require,module,exports) {
+"use strict";
+
+Object.defineProperty(exports, "__esModule", {
+  value: true
+});
+var modeSwitch = function modeSwitch() {
+  var body = document.body;
+  var switches = document.querySelectorAll('.header__switch');
+  switches.forEach(function (swtch) {
+    swtch.addEventListener('click', function () {
+      var currentMode = body.getAttribute('data-mode');
+      var newMode = currentMode === 'light' ? 'dark' : 'light';
+      body.setAttribute('data-mode', newMode);
+      switches.forEach(function (s) {
+        s.classList.toggle('light');
+      });
+    });
+  });
+};
+exports.default = modeSwitch;
 },{}],"js/common/components/showElementsOnScroll.ts":[function(require,module,exports) {
 "use strict";
 
@@ -226,10 +247,12 @@ Object.defineProperty(exports, "__esModule", {
 });
 var initAOS_1 = __importDefault(require("./components/initAOS"));
 var menuToggler_1 = __importDefault(require("./components/menuToggler"));
+var modeSwitch_1 = __importDefault(require("./components/modeSwitch"));
 var showElementsOnScroll_1 = __importDefault(require("./components/showElementsOnScroll"));
 document.addEventListener('DOMContentLoaded', function () {
   (0, menuToggler_1.default)();
   (0, showElementsOnScroll_1.default)();
   (0, initAOS_1.default)();
+  (0, modeSwitch_1.default)();
 }, false);
-},{"./components/initAOS":"y14Y","./components/menuToggler":"js/common/components/menuToggler.ts","./components/showElementsOnScroll":"js/common/components/showElementsOnScroll.ts"}]},{},["js/common/index.ts"], null)
+},{"./components/initAOS":"y14Y","./components/menuToggler":"js/common/components/menuToggler.ts","./components/modeSwitch":"js/common/components/modeSwitch.ts","./components/showElementsOnScroll":"js/common/components/showElementsOnScroll.ts"}]},{},["js/common/index.ts"], null)
