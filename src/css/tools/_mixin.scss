@@ -22,7 +22,7 @@
 }
 
 @mixin gradient($opacity: 1) {
-  background: linear-gradient(color.$secondary, color.$primary);
+  background: var(--color-gradient);
   opacity: $opacity;
 }
 

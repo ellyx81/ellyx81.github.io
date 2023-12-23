@@ -1,0 +1,19 @@
+@use 'settings/color' as color;
+
+body {
+
+  &[data-mode="light"] {
+    --color-page-background: #{color.$gradient-bg-light};
+    --color-page-background-dark: #{color.$gradient-bg-dark};
+    --color-text: #{color.$black-light};
+    --color-heading: #{color.$black-light};
+    --color-gray: #{color.$gray-light};
+    --color-icon: #{color.$gray};
+    --color-input: #{color.$white-transparent-light};
+    --color-shadow: #{color.$gray-transparent};
+
+    .header__logo {
+      background: url("../img/logo-light.svg") no-repeat center/100% 100%;
+    }
+  }
+}

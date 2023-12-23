@@ -15,7 +15,7 @@
 
   &__form,
   &__link-container {
-    max-width: 800px;
+    max-width: 750px;
     margin: 2.5em auto 0;
     @include mq.mx1024 {
       max-width: 650px;
@@ -27,6 +27,7 @@
     border-radius: 1.2em;
     overflow: hidden;
     position: relative;
+    box-shadow: rgba(50, 50, 93, 0.25) 0px 2px 5px -1px, rgba(0, 0, 0, 0.3) 0px 1px 3px -1px;
     @include mixin.setrem($pc: 1.5rem, $tablet: 1.3rem, $sp: 1.1rem);
     //rem sizes are set in .contact__form, and input, textarea and button elements;
     @include mq.mx1024 {
@@ -40,8 +41,8 @@
       left: 0;
       width: 100%;
       height: 100%;
-      background-color: rgba(0, 0, 0, 0.3);
-      backdrop-filter: blur(6px);
+      background-color: var(--color-card-secondary);
+//      backdrop-filter: blur(6px);
       z-index: -1;
     }
   }
@@ -59,7 +60,7 @@
 
     &::after {
       content: '*';
-      color: color.$primary;
+      color: var(--color-primary);
       font-weight: fw.$bold;
     }
 
@@ -107,7 +108,7 @@
       left: 0;
       width: 100%;
       height: 100%;
-      @include mixin.gradient($opacity: 0.2);
+      @include mixin.gradient(0.6);
       z-index: -1;
     }
 
