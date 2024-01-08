@@ -1,16 +1,19 @@
 footer.footer 
   .footer__contents
     .footer__wrapper
-      a.footer__logo(href="")
+      a.footer__logo(href="" aria-label="logo")
         img(src="img/logo-2.svg", alt="logo")
       span.footer__text Thanks for stopping by ッ
-      span.footer__copyright © 2023 Giselle Santos. All Rights Reserved.
+      span.footer__copyright 
+        | &copy 
+        span#year 
+        |  Giselle Santos. All Rights Reserved.
     .footer__link-container
       .footer__link-column
         span.footer__link-title Sitemap
-        a(href="#about-me") About
-        a(href="#works") Work
-        a(href="#tech-stack") Tech Stack
+        a(href="#about-me") About Me
+        a(href="#works") Works
+        a(href="#tech-stack") Technologies
         a(href="#contact") Contact
       .footer__link-column
         span.footer__link-title Links
@@ -19,4 +22,4 @@ footer.footer
         a(href="https://www.linkedin.com/in/giselle-santos-0017a7298/" target="_blank") LinkedIn
         a(href="https://github.com/ellyx81" target="_blank") Github
         //- a(href="https://www.facebook.com/Ellyx08/" target="_blank") Facebook
-    a.footer__to-top-btn.js-to-top(href="#")
+    a.footer__to-top-btn.js-to-top(href="#" aria-label="To-top button")

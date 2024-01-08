@@ -13,6 +13,9 @@
   @include mq.mx1024 {
     height: 70px;
   }
+  @include mq.sp {
+    height: 60px;
+  }
 
   &__contents {
     position: relative;
@@ -23,7 +26,7 @@
     background: var(--color-page-background);
     backdrop-filter: blur(40px);
     box-shadow: var(--color-shadow) 0px 7px 29px 0px;
-    @include mixin.setrem($pc: 2.0rem, $tablet: 1.6rem, $sp: 1.6rem);
+    @include mixin.setrem($pc: 2.0rem, $tablet: 1.6rem, $sp: 1.4rem);
     @include mixin.center($direction: row, $justify: space-between);
     @include mq.mx1024 {
       padding: 0;
@@ -52,10 +55,6 @@
         visibility: visible;
         opacity: 1;
       }
-
-      #{$p}__logo {
-        opacity: 0;
-      }
     }
 
     &.scroll {
@@ -80,12 +79,21 @@
         box-shadow: var(--color-shadow) 0px 7px 29px 0px;
       }
 
-      #{$p}__toggler,
-      #{$p}__logo {
+      #{$p}__toggler {
         @include  mq.mx1024 {
           top: 20px;
         }
       }
+
+      #{$p}__logo {
+        @include  mq.mx1024 {
+          top: 15px;
+        }
+        @include  mq.sp {
+          top: 17px;
+        }
+      }
+
       #{$p}__switch {
         @include  mq.mx1024 {
           top: 21px;
@@ -95,18 +103,21 @@
   }
 
   &__logo {
-    height: 1.35em;
-    width: 8.7em;
+    height: 1.8em;
+    width: 9.5em;
     transition: 0.3s;
     background: url("../img/logo.svg") no-repeat center/100% 100%;
-
     @include mq.mx1024 {
       position: absolute;
       left: 25px;
-      top: 23px;
+      top: 20px;
       width: 3.8em;
-      height: 1.5em;
+      height: 1.8em;
       background: url("../img/logo-2.svg") no-repeat center/100% 100% !important;
+    }
+    @include mq.sp {
+      left: 5%;
+      top: 18px;
     }
 
     img {
@@ -128,6 +139,8 @@
     }
     @include mq.sp {
       width: 35px;
+      top: 20px;
+      right: 5%;
     }
 
     &::before,
@@ -199,13 +212,14 @@
 
     &.expand {
       position: fixed;
+      right: 25px;
       transform: translateY(0);
     }
   }
 
   &__anchor-list {
     display: flex;
-    gap: 2.5em;
+    gap: 2.3em;
     justify-content: space-between;
     align-items: center;
     margin-right: 1.5em;
@@ -216,6 +230,9 @@
       margin: 0;
       padding: 0 25px;
       gap: 0;
+    }
+    @include mq.sp {
+      padding: 0 5%;
     }
   }
 
@@ -273,6 +290,10 @@
       top: 25px;
       right: 80px;
       transition: 0.3s;
+    }
+    @include mq.sp {
+      top: 21px;
+      right: calc(5% + 52px);
     }
 
     &:before {

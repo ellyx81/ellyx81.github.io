@@ -1,27 +1,24 @@
 @use 'settings/color' as color;
 @use 'settings/font-family' as ff;
+@use 'settings/font-weight' as fw;
 @use 'tools/media-queries' as mq;
 @use 'tools/function' as func;
 @use 'tools/mixin' as mixin;
 
 .heading {
-  font-family: ff.$heading;
-  letter-spacing: 0.03em;
+  //font-family: ff.$heading;
+  font-weight: fw.$bold;
+  //letter-spacing: 0.03em;
   line-height: 1em;
-  @include mixin.setrem($pc: 5.2rem, $tablet: 4rem, $sp: 3.5rem);
+  @include mixin.setrem($pc: 5.7rem, $tablet: 4.5rem, $sp: 4rem);
 
   &--small {
-    @include mixin.setrem($pc: 4.2rem, $tablet: 3rem, $sp: 2.5rem);
+    @include mixin.setrem($pc: 5.5rem, $tablet: 4.2rem, $sp: 3.9rem);
   }
 
   &--large {
     color: var(--color-primary-heading);
-    //text-transform: uppercase;
-    letter-spacing: 0.05em;
-    line-height: 1.1em;
-    @include mixin.setrem($pc: 9rem, $tablet: 7.5rem, $sp: 6.5rem);
-    @include mq.sp-sm {
-      font-size: 58px;
-    }
+    //letter-spacing: 0.03em;
+    @include mixin.setrem($pc: 10rem, $tablet: 8.2rem, $sp: 7.8rem);
   }
 }
