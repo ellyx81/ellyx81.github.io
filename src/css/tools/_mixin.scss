@@ -26,7 +26,7 @@
   opacity: $opacity;
 }
 
-@mixin setrem($pc: 1.8rem, $tablet: 1.4rem, $sp: 1.2rem) {
+@mixin setrem($pc: 1.7rem, $tablet: 1.4rem, $sp: 1.3rem) {
   font-size: $pc;
   @include mq.mx1024 {
     font-size: $tablet;

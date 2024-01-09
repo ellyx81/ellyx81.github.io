@@ -17,6 +17,7 @@
   }
 
   & * {
+    position: relative;
     z-index: 2;
   }
   
@@ -65,7 +66,7 @@
   }
 
   &:first-child {
-    height: calc(100svh - 80px);
+    height: calc(100svh - 70px);
     min-height: 700px;
     max-height: 800px;
     display: flex;
@@ -75,7 +76,7 @@
       max-height: 650px;
     }
     @include mq.sp {
-      height: calc(100svh - 70px);
+      height: calc(100svh - 60px);
       min-height: 400px;
       display: flex;
       flex-direction: column;

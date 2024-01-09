@@ -8,7 +8,7 @@ mixin picture(classname, path, type, alt)
 mixin worksItem(name, desc, cont, link, linkType, img, device)
   .works__item(data-aos="zoom-in-up" data-aos-duration="700" data-aos-offset="200")
     .works__text-wrap
-      img.works__logo(src="img/works/"+img+"-logo.png", alt=name+" logo").cover.overflow
+      +picture("works__logo", "/works/"+img+"-logo", "png", name+" logo").cover
       .works__text-grp
         h3.works__name= name 
         p.works__text= desc 
