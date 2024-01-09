@@ -1,3 +1,4 @@
+import currentYear from './components/currentYear';
 import initAOS from './components/initAOS';
 import menuToggler from './components/menuToggler'
 import modeSwitch from './components/modeSwitch';
@@ -10,6 +11,7 @@ document.addEventListener(
     showElements();
     initAOS();
     modeSwitch();
+    currentYear();
   },
   false
 )

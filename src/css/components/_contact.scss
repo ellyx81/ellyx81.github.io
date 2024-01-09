@@ -10,7 +10,7 @@
   &__text {
     display: block;
     text-align: center;
-    margin-top: 2em;
+    margin-top: 2.5em;
   }
 
   &__form,
@@ -28,7 +28,7 @@
     overflow: hidden;
     position: relative;
     box-shadow: rgba(50, 50, 93, 0.25) 0px 2px 5px -1px, rgba(0, 0, 0, 0.3) 0px 1px 3px -1px;
-    @include mixin.setrem($pc: 1.5rem, $tablet: 1.3rem, $sp: 1.1rem);
+    @include mixin.setrem($pc: 1.5rem, $tablet: 1.3rem, $sp: 1.2rem);
     //rem sizes are set in .contact__form, and input, textarea and button elements;
     @include mq.mx1024 {
       padding: 3em;

@@ -9,7 +9,7 @@ button {
   color: var(--color-heading);
   border: none;
   background: none;
-  @include mixin.setrem($pc: 1.5rem, $tablet: 1.3rem, $sp: 1.1rem);
+  @include mixin.setrem($pc: 1.5rem, $tablet: 1.3rem, $sp: 1.2rem);
 }
 
 input,
